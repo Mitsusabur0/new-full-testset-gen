@@ -1,0 +1,20 @@
+{
+  "retrieved": 3,
+  "errors": [
+    {
+      "timestamp": "2026-02-04T16:31:01.703445Z",
+      "operation": "retrieve",
+      "error": "An error occurred (ExpiredTokenException) when calling the Retrieve operation: The security token included in the request is expired"
+    },
+    {
+      "timestamp": "2026-02-04T16:31:09.778509Z",
+      "operation": "retrieve",
+      "error": "An error occurred (ExpiredTokenException) when calling the Retrieve operation: The security token included in the request is expired"
+    },
+    {
+      "timestamp": "2026-02-04T16:31:18.222227Z",
+      "operation": "retrieve",
+      "error": "An error occurred (ExpiredTokenException) when calling the Retrieve operation: The security token included in the request is expired"
+    }
+  ]
+}
