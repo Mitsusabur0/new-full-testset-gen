@@ -16,33 +16,5 @@
       "name": "Recall@K",
       "description": "La proporción de todos los documentos relevantes existentes en todo el conjunto de datos que fueron recuperados con éxito en los resultados top-k. Mide la cobertura del sistema y la capacidad de encontrar toda la información relevante disponible."
     }
-  ],
-  "deepeval": [
-    {
-      "name": "Contextual Precision",
-      "description": "Utiliza LLM-as-a-judge para medir el recuperador de su pipeline RAG evaluando si los nodos en su retrieval_context que son relevantes para la entrada dada están clasificados más alto que los irrelevantes. Es una evaluación auto-explicativa (self-explaining LLM-Eval), lo que significa que emite una razón para su puntaje métrico."
-    },
-    {
-      "name": "Contextual Recall",
-      "description": "Utiliza LLM-as-a-judge para medir la calidad del recuperador de su pipeline RAG evaluando el grado en que el retrieval_context se alinea con el expected_output. Es una evaluación auto-explicativa, lo que significa que emite una razón para su puntaje métrico."
-    },
-    {
-      "name": "Contextual Relevancy",
-      "description": "Utiliza LLM-as-a-judge para medir la calidad del recuperador de su pipeline RAG evaluando la relevancia general de la información presentada en su retrieval_context para una entrada dada. Es una evaluación auto-explicativa, lo que significa que emite una razón para su puntaje métrico."
-    }
-  ],
-  "ragas": [
-    {
-      "name": "Context Precision",
-      "description": "Evalúa la capacidad del recuperador para clasificar fragmentos relevantes más alto que los irrelevantes para una consulta dada en el contexto recuperado. Específicamente, evalúa el grado en que los fragmentos relevantes se colocan en la parte superior del ranking. Se calcula como la media de la precision@k para cada fragmento en el contexto."
-    },
-    {
-      "name": "Context Recall",
-      "description": "Mide cuántos de los documentos relevantes (o piezas de información) fueron recuperados exitosamente, enfocándose en no perder resultados importantes. Para estimarlo desde la referencia, esta se desglosa en afirmaciones (claims), y cada afirmación se analiza para determinar si puede atribuirse al contexto recuperado o no."
-    },
-    {
-      "name": "Context Entities Recall",
-      "description": "Proporciona la medida de recuerdo del contexto recuperado, basada en el número de entidades presentes tanto en la referencia como en los retrieval_contexts en relación con el número de entidades presentes solo en la referencia. Es útil en casos de uso basados en hechos y ayuda a evaluar el mecanismo de recuperación de entidades."
-    }
   ]
 }

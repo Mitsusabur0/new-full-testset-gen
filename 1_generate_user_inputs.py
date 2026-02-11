@@ -274,7 +274,7 @@ def main():
     error_log = []
     parse_failures = 0
     parse_fail_log_path = os.path.join(
-        os.path.dirname(config.OUTPUT_TESTSET_CSV),
+        os.path.dirname(config.PIPELINE_CSV),
         "parse_failures.jsonl"
     )
 
@@ -322,16 +322,16 @@ def main():
 
     if dataset:
         df = pd.DataFrame(dataset)
-        ensure_parent_dir(config.OUTPUT_TESTSET_CSV)
-        df.to_csv(config.OUTPUT_TESTSET_CSV, index=False)
-        print(f"Successfully generated {len(df)} test cases. Saved to {config.OUTPUT_TESTSET_CSV}")
+        ensure_parent_dir(config.PIPELINE_CSV)
+        df.to_csv(config.PIPELINE_CSV, index=False)
+        print(f"Successfully generated {len(df)} test cases. Saved to {config.PIPELINE_CSV}")
     else:
         print("No data generated.")
 
     if error_log or parse_failures:
         print(f"Non-fatal errors: {len(error_log)} | Parse failures: {parse_failures}")
         summary_path = os.path.join(
-            os.path.dirname(config.OUTPUT_TESTSET_CSV),
+            os.path.dirname(config.PIPELINE_CSV),
             "run_summary.json"
         )
         ensure_parent_dir(summary_path)

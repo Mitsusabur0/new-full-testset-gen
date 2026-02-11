@@ -1,8 +1,13 @@
 # evaluator.py
+import os
 import pandas as pd
-import numpy as np
 import ast
 import config
+
+def ensure_parent_dir(path):
+    parent = os.path.dirname(path)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
 
 def contains_source_file(source_file, retrieved_files):
     if not source_file or not retrieved_files:
@@ -61,9 +66,9 @@ def calculate_metrics(row):
     return pd.Series([hit_rate, mrr, precision, recall])
 
 def main():
-    print(f"Loading {config.OUTPUT_RAGAS_DEEP_EVALSET_CSV}...")
+    print(f"Loading {config.PIPELINE_CSV}...")
     try:
-        df = pd.read_csv(config.OUTPUT_RAGAS_DEEP_EVALSET_CSV)
+        df = pd.read_csv(config.PIPELINE_CSV)
     except FileNotFoundError:
         print("Input file not found. Run File 2 first.")
         return
@@ -93,14 +98,16 @@ def main():
             lambda x: ast.literal_eval(x) if isinstance(x, str) else x
         )
 
-    # Persist the augmented eval set with custom metrics (new file)
-    final_df.to_csv(config.OUTPUT_FULL_EVALSET_CSV, index=False)
+    # Persist the augmented eval set by updating the same pipeline CSV
+    ensure_parent_dir(config.PIPELINE_CSV)
+    final_df.to_csv(config.PIPELINE_CSV, index=False)
 
     # Save a Parquet version for downstream apps (handles lists natively)
+    ensure_parent_dir(config.OUTPUT_RESULTS_PARQUET)
     final_df.to_parquet(config.OUTPUT_RESULTS_PARQUET, index=False)
     print(
         "Evaluation complete. Results saved to "
-        f"{config.OUTPUT_FULL_EVALSET_CSV} and {config.OUTPUT_RESULTS_PARQUET}"
+        f"{config.PIPELINE_CSV} and {config.OUTPUT_RESULTS_PARQUET}"
     )
 
 if __name__ == "__main__":

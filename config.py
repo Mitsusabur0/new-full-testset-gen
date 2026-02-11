@@ -3,12 +3,22 @@ import os
 # --- PATHS ---
 KB_FOLDER = os.getenv("KB_FOLDER", "./kb_small_testfolder")
 # KB_FOLDER = os.getenv("KB_FOLDER", "./gold_full")
-OUTPUT_TESTSET_CSV = os.getenv("OUTPUT_TESTSET_CSV", "outputs/test1/testset.csv")
-RETRIEVER_INPUT_CSV = os.getenv("RETRIEVER_INPUT_CSV", "outputs/test1/testset_with_actual_outputs.csv")
-OUTPUT_EVALSET_CSV = os.getenv("OUTPUT_EVALSET_CSV", "outputs/test1/evaluation_set.csv")
-OUTPUT_RAGAS_DEEP_EVALSET_CSV = os.getenv("OUTPUT_RAGAS_DEEP_EVALSET_CSV", "outputs/test1/6_evalset.csv")
-OUTPUT_FULL_EVALSET_CSV = os.getenv("OUTPUT_FULL_EVALSET_CSV", "outputs/test1/evaluation_set_full.csv")
-OUTPUT_RESULTS_PARQUET = os.getenv("OUTPUT_RESULTS_PARQUET", "outputs/test1/testset_results.parquet")
+PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/test1")
+PIPELINE_CSV = os.getenv(
+    "PIPELINE_CSV",
+    os.path.join(PIPELINE_OUTPUT_DIR, "pipeline_state.csv")
+)
+OUTPUT_RESULTS_PARQUET = os.getenv(
+    "OUTPUT_RESULTS_PARQUET",
+    os.path.join(PIPELINE_OUTPUT_DIR, "pipeline_state.parquet")
+)
+
+# Backward-compatible aliases (deprecated)
+OUTPUT_TESTSET_CSV = PIPELINE_CSV
+RETRIEVER_INPUT_CSV = PIPELINE_CSV
+OUTPUT_EVALSET_CSV = PIPELINE_CSV
+OUTPUT_RAGAS_DEEP_EVALSET_CSV = PIPELINE_CSV
+OUTPUT_FULL_EVALSET_CSV = PIPELINE_CSV
 
 # --- AWS CONFIG ---
 AWS_REGION = os.getenv("AWS_REGION", "us-east-1")

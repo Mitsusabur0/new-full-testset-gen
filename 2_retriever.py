@@ -6,7 +6,6 @@ import boto3
 import ast
 import random
 import time
-import re
 from datetime import datetime
 from botocore.exceptions import ClientError
 import config
@@ -90,10 +89,9 @@ def retrieve_contexts(query, client, error_log):
     return retrieved_texts, retrieved_files
 
 def main():
-    print(f"Loading {config.RETRIEVER_INPUT_CSV}...")
+    print(f"Loading {config.PIPELINE_CSV}...")
     try:
-        # df = pd.read_csv(config.RETRIEVER_INPUT_CSV)
-        df = pd.read_csv("outputs/test1/3_testset_with_actual_outputs.csv")
+        df = pd.read_csv(config.PIPELINE_CSV)
     except FileNotFoundError:
         print("Input file not found. Run File 1 first.")
         return
@@ -121,13 +119,13 @@ def main():
     df['retrieved_contexts'] = retrieved_data
     df['retrieved_file'] = retrieved_files_data
     
-    # df.to_csv(config.OUTPUT_EVALSET_CSV, index=False)
-    df.to_csv("outputs/test1/4_evalset.csv", index=False)
-    print(f"Retrieval complete. Saved to {config.OUTPUT_EVALSET_CSV}")
+    ensure_parent_dir(config.PIPELINE_CSV)
+    df.to_csv(config.PIPELINE_CSV, index=False)
+    print(f"Retrieval complete. Updated {config.PIPELINE_CSV}")
 
     if error_log:
         summary_path = os.path.join(
-            os.path.dirname(config.OUTPUT_EVALSET_CSV),
+            os.path.dirname(config.PIPELINE_CSV),
             "retriever_run_summary.json"
         )
         ensure_parent_dir(summary_path)
