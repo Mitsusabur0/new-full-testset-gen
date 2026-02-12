@@ -4,6 +4,7 @@ import random
 import glob
 import re
 import time
+import unicodedata
 from datetime import datetime
 import pandas as pd
 import boto3
@@ -46,6 +47,10 @@ QUERY_STYLES = [
     {
         "style_name": "Mal redactado / Errores ortograficos",
         "description": "El usuario escribe de forma informal, con errores ortograficos o mal redactado. Puede usar abreviaturas, faltas de puntuacion o estructura incoherente. Ejemplo: 'kiero saver los reqs pa el subsidio'."
+    },
+    {
+        "style_name": "Errores ortograficos",
+        "description": "El usuario escribe con errores ortograficos en palabras clave. Además, usa abreviaturas, faltas de puntuacion o estructura incoherente'."
     },
 ]
 
@@ -146,6 +151,15 @@ def clean_llm_output(text):
     return cleaned_text.strip()
 
 
+def normalize_style_name(style_name):
+    if not style_name:
+        return ""
+    normalized = unicodedata.normalize("NFKD", style_name)
+    normalized = "".join(ch for ch in normalized if not unicodedata.combining(ch))
+    normalized = re.sub(r"\s+", " ", normalized).strip().lower()
+    return normalized
+
+
 def parse_llm_xml(content, allowed_styles):
     content_no_reasoning = clean_llm_output(content)
 
@@ -162,8 +176,16 @@ def parse_llm_xml(content, allowed_styles):
     if not question_text:
         return None, None, content_no_reasoning
 
-    if allowed_styles and style_found not in allowed_styles:
-        return None, None, content_no_reasoning
+    if allowed_styles:
+        style_found_norm = normalize_style_name(style_found)
+        matched_allowed_style = None
+        for allowed_style in allowed_styles:
+            if normalize_style_name(allowed_style) == style_found_norm:
+                matched_allowed_style = allowed_style
+                break
+        if not matched_allowed_style:
+            return None, None, content_no_reasoning
+        style_found = matched_allowed_style
 
     return question_text, style_found, content_no_reasoning
 

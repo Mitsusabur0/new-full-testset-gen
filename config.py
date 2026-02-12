@@ -1,9 +1,9 @@
 import os
 
 # --- PATHS ---
-KB_FOLDER = os.getenv("KB_FOLDER", "./kb_small_testfolder")
-# KB_FOLDER = os.getenv("KB_FOLDER", "./gold_full")
-PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/test1")
+# KB_FOLDER = os.getenv("KB_FOLDER", "./kb_small_testfolder")
+KB_FOLDER = os.getenv("KB_FOLDER", "./kb_full")
+PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/full_1")
 PIPELINE_CSV = os.getenv(
     "PIPELINE_CSV",
     os.path.join(PIPELINE_OUTPUT_DIR, "pipeline_state.csv")
