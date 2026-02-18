@@ -3,7 +3,6 @@ import os
 import json
 import pandas as pd
 import boto3
-import ast
 import random
 import time
 from datetime import datetime
@@ -73,13 +72,14 @@ def retrieve_contexts(query, client, error_log):
     response = call_with_retry(_call, "retrieve", error_log)
     if response is None:
         print(f"Retrieval Error for query '{query}': exhausted retries")
-        return []
+        return [], []
 
     results = response.get('retrievalResults', [])
     retrieved_texts = []
     retrieved_files = []
     for res in results:
-        retrieved_texts.append(clean_text(res['content']['text']))
+        text = clean_text(res.get('content', {}).get('text', ""))
+        retrieved_texts.append(text)
         uri = (
             res.get('location', {})
                .get('s3Location', {})
@@ -96,10 +96,9 @@ def main():
         print("Input file not found. Run File 1 first.")
         return
 
-    # Ensure reference_contexts is read as a list, not a string representation of a list
-    df['reference_contexts'] = df['reference_contexts'].apply(
-        lambda x: ast.literal_eval(x) if isinstance(x, str) else x
-    )
+    if 'user_input' not in df.columns:
+        print("Missing required column 'user_input'. Run File 1 first.")
+        return
 
     client = get_runtime_client()
     error_log = []

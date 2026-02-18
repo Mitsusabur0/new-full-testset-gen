@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import ast
 import html
@@ -69,12 +69,6 @@ def load_data(dataset_path: Path) -> pd.DataFrame:
         "custom_mrr",
         "custom_precision_at_k",
         "custom_recall_at_k",
-        "deepeval_contextual_precision",
-        "deepeval_contextual_recall",
-        "deepeval_contextual_relevancy",
-        "ragas_context_precision",
-        "ragas_context_recall",
-        "ragas_context_entity_recall",
     ]
     df = _coerce_numeric(df, metric_cols)
 
@@ -85,7 +79,7 @@ def load_data(dataset_path: Path) -> pd.DataFrame:
         df["mrr_bucket"] = pd.cut(
             df["custom_mrr"].fillna(0),
             bins=[-0.01, 0, 0.33, 0.66, 1.0],
-            labels=["0", "0–0.33", "0.33–0.66", "0.66–1.0"],
+            labels=["0", "0-0.33", "0.33-0.66", "0.66-1.0"],
         )
 
     return df
@@ -217,11 +211,7 @@ section.main > div {
 .theme-custom { color: #2563eb; }
 .bg-custom { background-color: #2563eb; }
 
-.theme-deepeval { color: #0f766e; }
-.bg-deepeval { background-color: #0f766e; }
 
-.theme-ragas { color: #ea580c; }
-.bg-ragas { background-color: #ea580c; }
 
 /* Force Global Metrics headers to whitesmoke regardless of theme class */
 .section-header.global-metrics-title {
@@ -267,10 +257,6 @@ div[data-testid="stVerticalBlock"] button {
     border: none;
 }
 .kpi-card-custom {
-}
-.kpi-card-deepeval {
-}
-.kpi-card-ragas {
 }
 
 .kpi-card-score {
@@ -382,12 +368,6 @@ div[data-testid="stVerticalBlock"] button {
 }
 .section-custom {
     color: #1d4ed8;
-}
-.section-deepeval {
-    color: #0f766e;
-}
-.section-ragas {
-    color: #ea580c;
 }
 
 /* Testcase Explorer */
@@ -664,17 +644,6 @@ def _render_kpi_cards(
             "Cobertura@K": "Recall@K",
             "MRR": "MRR",
         },
-        "deepeval": {
-            "Precisión contextual": "Contextual Precision",
-            "Cobertura contextual": "Contextual Recall",
-            "Relevancia contextual": "Contextual Relevancy",
-        },
-        "ragas": {
-            "Precisión de contexto": "Context Precision",
-            "Cobertura de contexto": "Context Recall",
-            "Cobertura de entidades de contexto": "Context Entities Recall",
-            "Cobertura de entidades": "Context Entities Recall",
-        },
     }
 
     cards = []
@@ -747,151 +716,49 @@ def _render_kpi_cards(
 
 
 def render_global_metrics_overview_tab(df: pd.DataFrame) -> None:
-    # Custom Metrics
     custom_metrics = [
-        ("Tasa de aciertos", "custom_hit_rate", "percent"),
         ("MRR", "custom_mrr", "float"),
+        ("Tasa de aciertos", "custom_hit_rate", "percent"),
         ("Precisión@K", "custom_precision_at_k", "float"),
         ("Cobertura@K", "custom_recall_at_k", "float"),
     ]
-    # DeepEval Metrics
-    deepeval_metrics = [
-        ("Precisión contextual", "deepeval_contextual_precision", "float"),
-        ("Cobertura contextual", "deepeval_contextual_recall", "float"),
-        ("Relevancia contextual", "deepeval_contextual_relevancy", "float"),
-    ]
-
-    # RAGAS Metrics
-    ragas_metrics = [
-        ("Precisión de contexto", "ragas_context_precision", "float"),
-        ("Cobertura de contexto", "ragas_context_recall", "float"),
-        ("Cobertura de entidades de contexto", "ragas_context_entity_recall", "float"),
-    ]
-    options = ["Personalizado", "DeepEval", "RAGAS"]
     metric_descriptions = load_metric_descriptions()
 
     st.markdown("<div class=\"global-metrics-container\">", unsafe_allow_html=True)
-    st.markdown("<div class=\"global-metrics-toggle\">", unsafe_allow_html=True)
-    st.radio(
-        "Sección de métricas globales",
-        options,
-        index=0,
-        horizontal=True,
-        label_visibility="collapsed",
-        key="global_metrics_section",
+    _render_kpi_cards(
+        df,
+        "Métricas tradicionales",
+        custom_metrics,
+        "custom",
+        metric_descriptions.get("custom", {}),
     )
-    selected = st.session_state["global_metrics_section"]
+    st.markdown("---")
+    render_interactive_metric_group(
+        df,
+        group_id="global_custom",
+        title="por estilo de consulta",
+        metrics=custom_metrics,
+        theme_color="#2563eb",
+        theme_class="",
+        header_class="global-metrics-title",
+        indicator_color="whitesmoke",
+    )
     st.markdown("</div>", unsafe_allow_html=True)
-
-    if selected == "Personalizado":
-        _render_kpi_cards(
-            df,
-            "Métricas tradicionales",
-            custom_metrics,
-            "custom",
-            metric_descriptions.get("custom", {}),
-        )
-        st.markdown("---")
-        render_interactive_metric_group(
-            df,
-            group_id="global_custom",
-            title="por estilo de consulta",
-            metrics=custom_metrics,
-            theme_color="#2563eb",
-            theme_class="",
-            header_class="global-metrics-title",
-            indicator_color="whitesmoke",
-        )
-    elif selected == "DeepEval":
-        _render_kpi_cards(
-            df,
-            "Métricas de DeepEval",
-            deepeval_metrics,
-            "deepeval",
-            metric_descriptions.get("deepeval", {}),
-        )
-        st.markdown("---")
-        render_interactive_metric_group(
-            df,
-            group_id="global_deepeval",
-            title="por estilo de consulta",
-            metrics=deepeval_metrics,
-            theme_color="#0f766e",
-            theme_class="",
-            header_class="global-metrics-title",
-            indicator_color="whitesmoke",
-        )
-    else:
-        _render_kpi_cards(
-            df,
-            "Métricas de RAGAS",
-            ragas_metrics,
-            "ragas",
-            metric_descriptions.get("ragas", {}),
-        )
-        st.markdown("---")
-        render_interactive_metric_group(
-            df,
-            group_id="global_ragas",
-            title="por estilo de consulta",
-            metrics=ragas_metrics,
-            theme_color="#ea580c",
-            theme_class="",
-            header_class="global-metrics-title",
-            indicator_color="whitesmoke",
-        )
-
-    st.markdown("</div>", unsafe_allow_html=True)
-
-
 def render_by_query_style_tab(df: pd.DataFrame) -> None:
-    # 1. Custom Metrics
     custom_metrics = [
-        ("Tasa de aciertos", "custom_hit_rate", "percent"),
         ("MRR", "custom_mrr", "float"),
+        ("Tasa de aciertos", "custom_hit_rate", "percent"),
         ("Precisión@K", "custom_precision_at_k", "float"),
         ("Cobertura@K", "custom_recall_at_k", "float"),
     ]
     render_interactive_metric_group(
-        df, 
-        group_id="custom", 
-        title="Métricas tradicionales", 
-        metrics=custom_metrics, 
-        theme_color="#2563eb", # Blue
+        df,
+        group_id="custom",
+        title="Métricas tradicionales",
+        metrics=custom_metrics,
+        theme_color="#2563eb",
         theme_class="theme-custom"
     )
-
-    # 2. DeepEval Metrics
-    deepeval_metrics = [
-        ("Precisión contextual", "deepeval_contextual_precision", "float"),
-        ("Cobertura contextual", "deepeval_contextual_recall", "float"),
-        ("Relevancia contextual", "deepeval_contextual_relevancy", "float"),
-    ]
-    render_interactive_metric_group(
-        df, 
-        group_id="deepeval", 
-        title="Métricas de DeepEval", 
-        metrics=deepeval_metrics, 
-        theme_color="#0f766e", # Teal
-        theme_class="theme-deepeval"
-    )
-
-    # 3. RAGAS Metrics
-    ragas_metrics = [
-        ("Precisión de contexto", "ragas_context_precision", "float"),
-        ("Cobertura de contexto", "ragas_context_recall", "float"),
-        ("Cobertura de entidades", "ragas_context_entity_recall", "float"),
-    ]
-    render_interactive_metric_group(
-        df, 
-        group_id="ragas", 
-        title="Métricas de RAGAS", 
-        metrics=ragas_metrics, 
-        theme_color="#ea580c", # Orange
-        theme_class="theme-ragas"
-    )
-
-
 def render_case_explorer(df: pd.DataFrame) -> None:
     st.markdown("### Explorador de casos de prueba")
 
@@ -962,14 +829,6 @@ def render_case_explorer(df: pd.DataFrame) -> None:
 
         score_row("MRR", row.get("custom_mrr"))
         score_row("Tasa de aciertos", row.get("custom_hit_rate"))
-        st.caption("DeepEval")
-        score_row("Precisión", row.get("deepeval_contextual_precision"))
-        score_row("Cobertura", row.get("deepeval_contextual_recall"))
-        score_row("Relevancia", row.get("deepeval_contextual_relevancy"))
-        st.caption("RAGAS")
-        score_row("Precisión", row.get("ragas_context_precision"))
-        score_row("Cobertura", row.get("ragas_context_recall"))
-        score_row("Cobertura de entidades", row.get("ragas_context_entity_recall"))
 
     st.markdown("---")
 
@@ -1021,20 +880,10 @@ def render_compare_datasets_tab() -> None:
     metric_descriptions = load_metric_descriptions()
 
     custom_metrics = [
-        ("Tasa de aciertos", "custom_hit_rate", "percent"),
         ("MRR", "custom_mrr", "float"),
+        ("Tasa de aciertos", "custom_hit_rate", "percent"),
         ("Precisión@K", "custom_precision_at_k", "float"),
         ("Cobertura@K", "custom_recall_at_k", "float"),
-    ]
-    deepeval_metrics = [
-        ("Precisión contextual", "deepeval_contextual_precision", "float"),
-        ("Cobertura contextual", "deepeval_contextual_recall", "float"),
-        ("Relevancia contextual", "deepeval_contextual_relevancy", "float"),
-    ]
-    ragas_metrics = [
-        ("Precisión de contexto", "ragas_context_precision", "float"),
-        ("Cobertura de contexto", "ragas_context_recall", "float"),
-        ("Cobertura de entidades de contexto", "ragas_context_entity_recall", "float"),
     ]
 
     def compute_group_score(df: pd.DataFrame, metrics: list[tuple[str, str, str]]) -> float | None:
@@ -1066,28 +915,6 @@ def render_compare_datasets_tab() -> None:
             row_class="kpi-row kpi-row-vertical",
             highlight_score=highlight.get("custom", False),
         )
-        st.markdown("---")
-        _render_kpi_cards(
-            df,
-            "Métricas de DeepEval",
-            deepeval_metrics,
-            "deepeval",
-            metric_descriptions.get("deepeval", {}),
-            score_first=True,
-            row_class="kpi-row kpi-row-vertical",
-            highlight_score=highlight.get("deepeval", False),
-        )
-        st.markdown("---")
-        _render_kpi_cards(
-            df,
-            "Métricas de RAGAS",
-            ragas_metrics,
-            "ragas",
-            metric_descriptions.get("ragas", {}),
-            score_first=True,
-            row_class="kpi-row kpi-row-vertical",
-            highlight_score=highlight.get("ragas", False),
-        )
 
     col_left, col_gap, col_right = st.columns([0.85, 0.3, 0.85])
     with col_left:
@@ -1108,13 +935,9 @@ def render_compare_datasets_tab() -> None:
 
     left_scores = {
         "custom": compute_group_score(left_df, custom_metrics),
-        "deepeval": compute_group_score(left_df, deepeval_metrics),
-        "ragas": compute_group_score(left_df, ragas_metrics),
     }
     right_scores = {
         "custom": compute_group_score(right_df, custom_metrics),
-        "deepeval": compute_group_score(right_df, deepeval_metrics),
-        "ragas": compute_group_score(right_df, ragas_metrics),
     }
 
     def _rounded_score(value: float | None) -> float | None:
@@ -1128,7 +951,7 @@ def render_compare_datasets_tab() -> None:
         side: str,
     ) -> dict[str, bool]:
         out: dict[str, bool] = {}
-        for key in ("custom", "deepeval", "ragas"):
+        for key in ("custom",):
             a = _rounded_score(scores_a.get(key))
             b = _rounded_score(scores_b.get(key))
             if a is None and b is None:
@@ -1150,8 +973,6 @@ def render_compare_datasets_tab() -> None:
         render_column(left_df, left_highlight)
     with col_right:
         render_column(right_df, right_highlight)
-
-
 def select_dataset() -> Path | None:
     with st.sidebar:
         st.header("Conjunto de datos")
@@ -1222,6 +1043,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 
 
