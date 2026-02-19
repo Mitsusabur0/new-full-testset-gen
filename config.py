@@ -3,7 +3,7 @@ import os
 # --- PATHS ---
 KB_FOLDER = os.getenv("KB_FOLDER", "./kb_small_testfolder")
 # KB_FOLDER = os.getenv("KB_FOLDER", "./kb_full")
-PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/full_test")
+PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/full_test_new_kb")
 PIPELINE_CSV = os.getenv(
     "PIPELINE_CSV",
     os.path.join(PIPELINE_OUTPUT_DIR, "pipeline_state.csv")
@@ -15,7 +15,8 @@ OUTPUT_RESULTS_PARQUET = os.getenv(
 
 # --- AWS CONFIG ---
 KB_SERVICE = os.getenv("KB_SERVICE", "bedrock-agent-runtime")
-KB_ID = os.getenv("KB_ID", "J7JNHSZPJ3")
+# KB_ID = os.getenv("KB_ID", "J7JNHSZPJ3")
+KB_ID = os.getenv("KB_ID", "3TPM53DPBN")
 
 AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
 AWS_PROFILE_LLM = os.getenv("AWS_PROFILE_DEFAULT", "default")
