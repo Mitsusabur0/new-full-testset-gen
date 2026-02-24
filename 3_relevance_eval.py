@@ -11,7 +11,7 @@ TARGET_PROGRESS_UPDATES = 20
 
 def progress_iter(iterable, total, desc, unit):
     try:
-        from tqdm import tqdm  # type: ignore
+        from tqdm import tqdm
 
         return tqdm(iterable, total=total, desc=desc, unit=unit)
     except Exception:

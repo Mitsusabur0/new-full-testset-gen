@@ -1,0 +1,102 @@
+{
+  "request": {
+    "agentId": "UKQEMRZQUS",
+    "agentAliasId": "JPSUY1DN1P",
+    "sessionId": "retriever-agent-20260223T213107Z",
+    "inputText": "Qué es casaverso?",
+    "enableTrace": false
+  },
+  "response_metadata": {
+    "ResponseMetadata": {
+      "RequestId": "3383e62b-769c-4c4a-baed-f5a9fd17bb53",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "date": "Mon, 23 Feb 2026 21:31:08 GMT",
+        "content-type": "application/vnd.amazon.eventstream",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "x-amzn-requestid": "3383e62b-769c-4c4a-baed-f5a9fd17bb53",
+        "x-amz-bedrock-agent-session-id": "retriever-agent-20260223T213107Z",
+        "x-amzn-bedrock-agent-content-type": "application/json"
+      },
+      "RetryAttempts": 0
+    },
+    "contentType": "application/json",
+    "sessionId": "retriever-agent-20260223T213107Z"
+  },
+  "agent_text": "CASAVERSO es el ecosistema digital de vivienda y construcción de BancoEstado. Es una plataforma que reúne en un solo lugar todos los servicios relacionados con la vivienda, incluyendo asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites. \nHa sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario, y las nuevas tecnologías emergentes a nivel mundial.",
+  "completion_events": [
+    {
+      "chunk": {
+        "attribution": {
+          "citations": [
+            {
+              "generatedResponsePart": {
+                "textResponsePart": {
+                  "span": {
+                    "end": 256,
+                    "start": 0
+                  },
+                  "text": "CASAVERSO es el ecosistema digital de vivienda y construcción de BancoEstado. Es una plataforma que reúne en un solo lugar todos los servicios relacionados con la vivienda, incluyendo asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites."
+                }
+              },
+              "retrievedReferences": [
+                {
+                  "content": {
+                    "text": "# Qué es CASAVERSO CASAVERSO es el ecosistema de vivienda y construcción de BancoEstado. Es una plataforma digital donde todos los mundos que hoy están dispersos -asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites- se reúnen en un mismo lugar. CASAVERSO: el universo completo de la vivienda, en un solo lugar.",
+                    "type": "TEXT"
+                  },
+                  "location": {
+                    "s3Location": {
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00589 - Qué es CASAVERSO.md"
+                    },
+                    "type": "S3"
+                  },
+                  "metadata": {
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00589 - Qué es CASAVERSO.md",
+                    "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3ATeZw_5sBhZmwEfDMkTt_",
+                    "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                  }
+                }
+              ]
+            },
+            {
+              "generatedResponsePart": {
+                "textResponsePart": {
+                  "span": {
+                    "end": 454,
+                    "start": 258
+                  },
+                  "text": "\nHa sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario, y las nuevas tecnologías emergentes a nivel mundial."
+                }
+              },
+              "retrievedReferences": [
+                {
+                  "content": {
+                    "text": "# El Nuevo Portal CASAVERSO es de BancoEstado Sí, este nuevo portal ha sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario y las nuevas tecnologías emergentes a nivel mundial.",
+                    "type": "TEXT"
+                  },
+                  "location": {
+                    "s3Location": {
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00582 - El Nuevo Portal CASAVERSO es de BancoEstado.md"
+                    },
+                    "type": "S3"
+                  },
+                  "metadata": {
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00582 - El Nuevo Portal CASAVERSO es de BancoEstado.md",
+                    "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3Aq-Zw_5sBhZmwEfDMtzv4",
+                    "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "bytes": "CASAVERSO es el ecosistema digital de vivienda y construcción de BancoEstado. Es una plataforma que reúne en un solo lugar todos los servicios relacionados con la vivienda, incluyendo asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites. \nHa sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario, y las nuevas tecnologías emergentes a nivel mundial."
+      }
+    }
+  ],
+  "saved_at_utc": "2026-02-23T21:31:13.389240+00:00"
+}
