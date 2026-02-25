@@ -2,9 +2,9 @@ import os
 
 # --- PATHS ---
 KB_FOLDER = os.getenv("KB_FOLDER", "./kb_small_testfolder")
-# KB_FOLDER = os.getenv("KB_FOLDER", "./kb_full")
-# PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/small_test")
-PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/full_test_reranker")
+PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/small_test_agent_retrieval")
+
+
 PIPELINE_CSV = os.getenv(
     "PIPELINE_CSV",
     os.path.join(PIPELINE_OUTPUT_DIR, "pipeline_state.csv")
@@ -40,8 +40,8 @@ INPUT_PRICE = float(os.getenv("INPUT_PRICE", "0.00015"))
 OUTPUT_PRICE = float(os.getenv("OUTPUT_PRICE", "0.0006"))
 
 # --- RETRIEVAL / EVAL ---
-TOP_K = int(os.getenv("TOP_K", "3"))
-EVAL_K = int(os.getenv("EVAL_K", "3"))
+TOP_K = int(os.getenv("TOP_K", "2"))
+EVAL_K = int(os.getenv("EVAL_K", "2"))
 
 # --- REPRODUCIBILITY ---
 SEED = int(os.getenv("SEED", "42"))
