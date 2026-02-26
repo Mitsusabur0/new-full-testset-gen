@@ -6,6 +6,7 @@ gold/
 gold_full/
 kb_full/
 
+.Goals of Today.md
 
 
 # Github's default gitignore for Python
