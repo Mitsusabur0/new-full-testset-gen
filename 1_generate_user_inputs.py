@@ -12,7 +12,6 @@ from botocore.exceptions import ClientError
 
 import config
 
-# --- CHILEAN BANKING CONTEXT CONFIGURATION ---
 NO_GENERATION_SENTINEL = "No se puede generar con este estilo"
 
 QUERY_STYLES = [

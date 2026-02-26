@@ -59,7 +59,7 @@ def load_data(dataset_path: Path) -> pd.DataFrame:
         return pd.DataFrame()
     df = pd.read_parquet(dataset_path)
 
-    list_cols = ["reference_contexts", "retrieved_contexts", "retrieved_file"]
+    list_cols = ["reference_contexts", "retrieved_contexts", "retrieved_file", "relevance_scores"]
     for col in list_cols:
         if col in df.columns:
             df[col] = df[col].apply(_to_list)
@@ -69,10 +69,10 @@ def load_data(dataset_path: Path) -> pd.DataFrame:
         "custom_mrr",
         "custom_precision_at_k",
         "custom_recall_at_k",
+        "precision_at_k_relevance",
     ]
     df = _coerce_numeric(df, metric_cols)
 
-    # Convenience columns
     if "custom_hit_rate" in df.columns:
         df["is_hit"] = df["custom_hit_rate"].fillna(0).astype(int)
     if "custom_mrr" in df.columns:
@@ -512,7 +512,7 @@ def render_interactive_metric_group(
     df: pd.DataFrame,
     group_id: str,
     title: str,
-    metrics: list[tuple[str, str, str]],  # (Label, Column, Format)
+    metrics: list[tuple[str, str, str]], 
     theme_color: str,
     theme_class: str,
     header_class: str | None = None,
@@ -565,7 +565,6 @@ def render_interactive_metric_group(
     with col_kpis:
         st.markdown(f"<div style='margin-bottom: 0.5rem; font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;'>Seleccionar métrica</div>", unsafe_allow_html=True)
         for label, col_name, fmt in available_metrics:
-            # Calculate Value
             val = df[col_name].mean()
             if pd.isna(val):
                 val_str = "N/D"
@@ -574,12 +573,9 @@ def render_interactive_metric_group(
             else:
                 val_str = f"{val:.3f}"
 
-            # Determine button state
             is_active = (st.session_state[state_key] == col_name)
             btn_type = "primary" if is_active else "secondary"
             
-            # The button text acts as the "Card" content
-            # We use newlines to separate Label and Value
             button_label = f"{label}\n{val_str}"
             
             if st.button(button_label, key=f"btn_{group_id}_{col_name}", type=btn_type, use_container_width=True):
@@ -588,7 +584,6 @@ def render_interactive_metric_group(
 
     with col_chart:
         current_metric_col = st.session_state[state_key]
-        # Find label for title
         current_label = next((m[0] for m in available_metrics if m[1] == current_metric_col), current_metric_col)
         
         render_query_style_chart(
@@ -613,9 +608,8 @@ def value_to_color(value: float | None) -> str | None:
     if value is None or pd.isna(value):
         return None
     v = max(0.0, min(1.0, float(value)))
-    # Skew toward red so mid values stay warmer (more red) than green.
     v = v ** 2
-    r = int(round(214 * (1 - v) + 16 * v))  # 0->#d65151, 1->#10b981
+    r = int(round(214 * (1 - v) + 16 * v))  
     g = int(round(81 * (1 - v) + 185 * v))
     b = int(round(81 * (1 - v) + 129 * v))
     return f"rgb({r}, {g}, {b})"
@@ -720,6 +714,7 @@ def render_global_metrics_overview_tab(df: pd.DataFrame) -> None:
         ("MRR", "custom_mrr", "float"),
         ("Tasa de aciertos", "custom_hit_rate", "percent"),
         ("Precisión@K", "custom_precision_at_k", "float"),
+        ("Precision@K - Reranker", "precision_at_k_relevance", "float"),
         ("Cobertura@K", "custom_recall_at_k", "float"),
     ]
     metric_descriptions = load_metric_descriptions()
@@ -749,6 +744,7 @@ def render_by_query_style_tab(df: pd.DataFrame) -> None:
         ("MRR", "custom_mrr", "float"),
         ("Tasa de aciertos", "custom_hit_rate", "percent"),
         ("Precisión@K", "custom_precision_at_k", "float"),
+        ("Precision@K - Reranker", "precision_at_k_relevance", "float"),
         ("Cobertura@K", "custom_recall_at_k", "float"),
     ]
     render_interactive_metric_group(
@@ -762,7 +758,6 @@ def render_by_query_style_tab(df: pd.DataFrame) -> None:
 def render_case_explorer(df: pd.DataFrame) -> None:
     st.markdown("### Explorador de casos de prueba")
 
-    # Table View
     display_cols = [
         col for col in ["user_input", "query_style", "source_file", "custom_mrr", "custom_hit_rate"]
         if col in df.columns
@@ -790,30 +785,22 @@ def render_case_explorer(df: pd.DataFrame) -> None:
 
     st.markdown("---")
     
-    # Details Grid
     col1, col_gap, col2 = st.columns([1.5, 0.15, 1])
 
     with col1:
         st.subheader("Prompt y salidas")
         user_input = row.get("user_input", "—")
-        expected_output = row.get("expected_output", "—")
-        actual_output = row.get("actual_output", "—")
 
         case_html = (
             "<div class=\"case-block\">"
             f"<div class=\"case-section\"><div class=\"case-title\">Entrada del usuario</div>"
             f"<div class=\"case-body\">{html.escape(str(user_input))}</div></div>"
-            f"<div class=\"case-section\"><div class=\"case-title\">Salida esperada</div>"
-            f"<div class=\"case-body\">{html.escape(str(expected_output))}</div></div>"
-            f"<div class=\"case-section\"><div class=\"case-title\">Salida real</div>"
-            f"<div class=\"case-body\">{html.escape(str(actual_output))}</div></div>"
             "</div>"
         )
         st.markdown(case_html, unsafe_allow_html=True)
 
     with col2:
         st.subheader("Puntuaciones")
-        # Helper to render a score row
         def score_row(label, val, fmt=".4f"):
             if pd.isna(val): return
             v_str = f"{val:{fmt}}" if isinstance(val, float) else str(val)
@@ -829,6 +816,7 @@ def render_case_explorer(df: pd.DataFrame) -> None:
 
         score_row("MRR", row.get("custom_mrr"))
         score_row("Tasa de aciertos", row.get("custom_hit_rate"))
+        score_row("Precision@K - Reranker", row.get("precision_at_k_relevance"))
 
     st.markdown("---")
 
@@ -846,6 +834,7 @@ def render_case_explorer(df: pd.DataFrame) -> None:
         st.subheader("Contextos recuperados")
         ret = row.get("retrieved_contexts", [])
         ret_files = row.get("retrieved_file", [])
+        relevance_scores = row.get("relevance_scores", [])
         source_file = str(row.get("source_file", "")).strip()
         
         if not ret:
@@ -859,8 +848,14 @@ def render_case_explorer(df: pd.DataFrame) -> None:
                 rank_class = "hit-rank" if is_hit else ""
                 file_class = "hit-file" if is_hit else ""
                 badge_html = "<span class=\"hit-badge\">Acierto</span>" if is_hit else ""
+                score_val = relevance_scores[i] if i < len(relevance_scores) else None
+                try:
+                    score_text = f"{float(score_val):.4f}"
+                except (TypeError, ValueError):
+                    score_text = "N/D"
                 st.markdown(
-                    f"<div class=\"{rank_class}\">Rango {i+1}{badge_html}</div>"
+                    f"<div class=\"{rank_class}\">{i+1}{badge_html}</div>"
+                    f"<div style=\"margin-bottom: 0.2rem;\">Reranker: {html.escape(score_text)}.</div>"
                     f"<div class=\"{file_class}\" style=\"margin-bottom: 0.35rem;\">(Archivo: {html.escape(str(fname))})</div>",
                     unsafe_allow_html=True,
                 )
@@ -883,6 +878,7 @@ def render_compare_datasets_tab() -> None:
         ("MRR", "custom_mrr", "float"),
         ("Tasa de aciertos", "custom_hit_rate", "percent"),
         ("Precisión@K", "custom_precision_at_k", "float"),
+        ("Precision@K - Reranker", "precision_at_k_relevance", "float"),
         ("Cobertura@K", "custom_recall_at_k", "float"),
     ]
 

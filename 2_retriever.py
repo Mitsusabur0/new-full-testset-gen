@@ -1,4 +1,3 @@
-# retriever.py
 import os
 import json
 import pandas as pd
@@ -49,7 +48,6 @@ def clean_text(text):
     """Helper to clean retrieved text for better comparison."""
     if not text:
         return ""
-    # Remove excessive whitespace, newlines, etc.
     return " ".join(text.split())
 
 def extract_s3_uri(uri):

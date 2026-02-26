@@ -4,6 +4,9 @@ import pandas as pd
 import ast
 import config
 
+
+output_file = "mini_test_reranker_precision"
+
 REQUIRED_COLUMNS = [
     "reference_contexts",
     "retrieved_contexts",
@@ -16,14 +19,18 @@ def ensure_parent_dir(path):
     if parent:
         os.makedirs(parent, exist_ok=True)
 
-def build_results_paths(output_dir: str) -> tuple[str, str, str]:
+def build_results_paths(output_dir: str, output_name: str = "") -> tuple[str, str, str]:
     folder_name = os.path.basename(os.path.normpath(output_dir))
-    csv_path = os.path.join(output_dir, f"{folder_name}_results.csv")
-    parquet_path = os.path.join(output_dir, f"{folder_name}_results.parquet")
+    base_name = output_name.strip() if isinstance(output_name, str) else ""
+    if not base_name:
+        base_name = folder_name
+
+    csv_path = os.path.join(output_dir, f"{base_name}_results.csv")
+    parquet_path = os.path.join(output_dir, f"{base_name}_results.parquet")
     streamlit_parquet_path = os.path.join(
         "streamlit",
         "complete_datasets",
-        f"{folder_name}_results.parquet",
+        f"{base_name}_results.parquet",
     )
     return csv_path, parquet_path, streamlit_parquet_path
 
@@ -53,6 +60,7 @@ def calculate_metrics(row):
     gt_list = row['reference_contexts']
     retrieved_list = row['retrieved_contexts']
     retrieved_files = row['retrieved_file']
+    relevance_scores = row.get('relevance_scores', float('nan'))
 
     gt_text = gt_list[0] if gt_list else ""
 
@@ -80,7 +88,17 @@ def calculate_metrics(row):
     precision = (1 / precision_k) if hit else 0
     recall = 1 if hit else 0
 
-    return pd.Series([hit_rate, mrr, precision, recall])
+    precision_at_k_relevance = float('nan')
+    if isinstance(relevance_scores, list):
+        k = len(relevance_scores)
+        if k > 0 and k == len(retrieved_list):
+            try:
+                hits = sum(1 for score in relevance_scores if float(score) >= 0.7)
+                precision_at_k_relevance = hits / k
+            except (TypeError, ValueError):
+                precision_at_k_relevance = float('nan')
+
+    return pd.Series([hit_rate, mrr, precision, recall, precision_at_k_relevance])
 
 def main():
     print(f"Loading {config.PIPELINE_CSV}...")
@@ -98,6 +116,8 @@ def main():
     df['reference_contexts'] = df['reference_contexts'].apply(parse_list_cell)
     df['retrieved_contexts'] = df['retrieved_contexts'].apply(parse_list_cell)
     df['retrieved_file'] = df['retrieved_file'].apply(parse_list_cell)
+    if 'relevance_scores' in df.columns:
+        df['relevance_scores'] = df['relevance_scores'].apply(parse_list_cell)
 
     print("Calculating metrics...")
 
@@ -107,12 +127,14 @@ def main():
         'custom_mrr',
         'custom_precision_at_k',
         'custom_recall_at_k',
+        'precision_at_k_relevance',
     ]
     
     final_df = pd.concat([df, metrics_df], axis=1)
 
     results_csv, results_parquet, streamlit_parquet = build_results_paths(
-        config.PIPELINE_OUTPUT_DIR
+        config.PIPELINE_OUTPUT_DIR,
+        output_file,
     )
 
     ensure_parent_dir(results_csv)

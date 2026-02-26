@@ -1,5 +1,4 @@
 import ast
-
 import pandas as pd
 import config
 
@@ -48,8 +47,7 @@ def clamp_score(score):
 
 def get_reranker():
     try:
-        import torch  # type: ignore
-
+        import torch 
         use_fp16 = torch.cuda.is_available()
     except Exception:
         use_fp16 = False
@@ -96,7 +94,6 @@ def compute_relevance_scores(df, reranker):
     if not all_pairs:
         return [[] for _ in range(len(df))]
 
-    # Keep normal throughput on large runs while ensuring visible progress on small runs.
     dynamic_batch_size = min(
         SCORE_BATCH_SIZE,
         max(1, len(all_pairs) // TARGET_PROGRESS_UPDATES),
