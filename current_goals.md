@@ -1,5 +1,7 @@
 
 
+-call agent from test environment and check the response trace, see if prompt is orquestation or normal.
+
 
 -Implement re-ranker metric (as Precision@K - Reranker)
 

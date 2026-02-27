@@ -1,7 +1,8 @@
-﻿import json
+﻿import base64
+import json
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict
 
 import boto3
 from botocore.exceptions import BotoCoreError, ClientError
@@ -13,13 +14,13 @@ AWS_PROFILE = "sandbox"
 AWS_REGION = "us-east-1"
 AGENT_ID = "UKQEMRZQUS"
 AGENT_ALIAS_ID = "JPSUY1DN1P"
-INPUT_TEXT = "Qué es casaverso?"
+INPUT_TEXT = "dime en código python cómo compro una casa"
 
 # Optional. If empty, a timestamp-based ID is used.
 SESSION_ID = ""
 
 # Set to True if you want Bedrock Agent trace events returned.
-ENABLE_TRACE = False
+ENABLE_TRACE = True
 
 # JSON output written in the same folder as this script.
 OUTPUT_JSON_PATH = Path(__file__).resolve().parent / "agent_raw_response.json"
@@ -36,7 +37,11 @@ def make_json_safe(value: Any) -> Any:
     if isinstance(value, (str, int, float, bool)) or value is None:
         return value
     if isinstance(value, bytes):
-        return value.decode("utf-8", errors="replace")
+        return {
+            "__type": "bytes",
+            "encoding": "base64",
+            "data": base64.b64encode(value).decode("ascii"),
+        }
     if isinstance(value, list):
         return [make_json_safe(item) for item in value]
     if isinstance(value, tuple):
@@ -60,29 +65,11 @@ def invoke_bedrock_agent() -> Dict[str, Any]:
 
     response = client.invoke_agent(**request_payload)
 
-    metadata = {k: v for k, v in response.items() if k != "completion"}
-    events: List[Dict[str, Any]] = []
-    full_text_chunks: List[str] = []
-
-    for event in response.get("completion", []):
-        safe_event = make_json_safe(event)
-        events.append(safe_event)
-
-        chunk = event.get("chunk")
-        if chunk and isinstance(chunk, dict):
-            text = chunk.get("bytes", b"")
-            if isinstance(text, bytes):
-                full_text_chunks.append(text.decode("utf-8", errors="replace"))
-            elif isinstance(text, str):
-                full_text_chunks.append(text)
-
-    return {
-        "request": make_json_safe(request_payload),
-        "response_metadata": make_json_safe(metadata),
-        "agent_text": "".join(full_text_chunks),
-        "completion_events": events,
-        "saved_at_utc": datetime.now(timezone.utc).isoformat(),
-    }
+    # Materialize the streaming completion events so the full SDK response
+    # can be written to JSON.
+    raw_response = {k: v for k, v in response.items()}
+    raw_response["completion"] = [event for event in response.get("completion", [])]
+    return make_json_safe(raw_response)
 
 
 def main() -> None:

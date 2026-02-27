@@ -1,0 +1,95 @@
+{
+  "ResponseMetadata": {
+    "RequestId": "2ae20a87-f1a8-4a92-8d7f-df523ab06999",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "date": "Fri, 27 Feb 2026 12:20:04 GMT",
+      "content-type": "application/vnd.amazon.eventstream",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "2ae20a87-f1a8-4a92-8d7f-df523ab06999",
+      "x-amz-bedrock-agent-session-id": "retriever-agent-20260227T122002Z",
+      "x-amzn-bedrock-agent-content-type": "application/json"
+    },
+    "RetryAttempts": 0
+  },
+  "contentType": "application/json",
+  "sessionId": "retriever-agent-20260227T122002Z",
+  "completion": [
+    {
+      "chunk": {
+        "attribution": {
+          "citations": [
+            {
+              "generatedResponsePart": {
+                "textResponsePart": {
+                  "span": {
+                    "end": 286,
+                    "start": 0
+                  },
+                  "text": "CASAVERSO es el ecosistema digital de vivienda y construcción de BancoEstado. Es una plataforma que reúne en un solo lugar todos los servicios relacionados con la vivienda, como asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites que anteriormente estaban dispersos."
+                }
+              },
+              "retrievedReferences": [
+                {
+                  "content": {
+                    "text": "# Qué es CASAVERSO CASAVERSO es el ecosistema de vivienda y construcción de BancoEstado. Es una plataforma digital donde todos los mundos que hoy están dispersos -asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites- se reúnen en un mismo lugar. CASAVERSO: el universo completo de la vivienda, en un solo lugar.",
+                    "type": "TEXT"
+                  },
+                  "location": {
+                    "s3Location": {
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00589 - Qué es CASAVERSO.md"
+                    },
+                    "type": "S3"
+                  },
+                  "metadata": {
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00589 - Qué es CASAVERSO.md",
+                    "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3ATeZw_5sBhZmwEfDMkTt_",
+                    "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                  }
+                }
+              ]
+            },
+            {
+              "generatedResponsePart": {
+                "textResponsePart": {
+                  "span": {
+                    "end": 484,
+                    "start": 288
+                  },
+                  "text": "\nHa sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario, y las nuevas tecnologías emergentes a nivel mundial."
+                }
+              },
+              "retrievedReferences": [
+                {
+                  "content": {
+                    "text": "# El Nuevo Portal CASAVERSO es de BancoEstado Sí, este nuevo portal ha sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario y las nuevas tecnologías emergentes a nivel mundial.",
+                    "type": "TEXT"
+                  },
+                  "location": {
+                    "s3Location": {
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00582 - El Nuevo Portal CASAVERSO es de BancoEstado.md"
+                    },
+                    "type": "S3"
+                  },
+                  "metadata": {
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00582 - El Nuevo Portal CASAVERSO es de BancoEstado.md",
+                    "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3Aq-Zw_5sBhZmwEfDMtzv4",
+                    "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "bytes": {
+          "__type": "bytes",
+          "encoding": "base64",
+          "data": "Q0FTQVZFUlNPIGVzIGVsIGVjb3Npc3RlbWEgZGlnaXRhbCBkZSB2aXZpZW5kYSB5IGNvbnN0cnVjY2nDs24gZGUgQmFuY29Fc3RhZG8uIEVzIHVuYSBwbGF0YWZvcm1hIHF1ZSByZcO6bmUgZW4gdW4gc29sbyBsdWdhciB0b2RvcyBsb3Mgc2VydmljaW9zIHJlbGFjaW9uYWRvcyBjb24gbGEgdml2aWVuZGEsIGNvbW8gYXNlc29yw61hLCBmaW5hbmNpYW1pZW50bywgaW5tb2JpbGlhcmlhcywgY29ycmVkb3Jlcywgbm90YXLDrWFzIHkgdHLDoW1pdGVzIHF1ZSBhbnRlcmlvcm1lbnRlIGVzdGFiYW4gZGlzcGVyc29zLiAKSGEgc2lkbyBkZXNhcnJvbGxhZG8gcG9yIEJhbmNvRXN0YWRvIGNvbnNpZGVyYW5kbyBsYXMgbmVjZXNpZGFkZXMgZGUgbG9zIGNsaWVudGVzLCBsYXMgY29uZGljaW9uZXMgYWN0dWFsZXMgeSBmdXR1cmFzIGRlbCBtZXJjYWRvIGlubW9iaWxpYXJpbywgeSBsYXMgbnVldmFzIHRlY25vbG9nw61hcyBlbWVyZ2VudGVzIGEgbml2ZWwgbXVuZGlhbC4="
+        }
+      }
+    }
+  ]
+}

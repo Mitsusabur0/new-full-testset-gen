@@ -1,0 +1,113 @@
+{
+  "ResponseMetadata": {
+    "RequestId": "bd71173d-9558-4ade-8474-65ec2f79d0da",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "date": "Fri, 27 Feb 2026 12:16:49 GMT",
+      "content-type": "application/vnd.amazon.eventstream",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "bd71173d-9558-4ade-8474-65ec2f79d0da",
+      "x-amz-bedrock-agent-session-id": "retriever-agent-20260227T121647Z",
+      "x-amzn-bedrock-agent-content-type": "application/json"
+    },
+    "RetryAttempts": 0
+  },
+  "contentType": "application/json",
+  "sessionId": "retriever-agent-20260227T121647Z",
+  "completion": [
+    {
+      "chunk": {
+        "attribution": {
+          "citations": [
+            {
+              "generatedResponsePart": {
+                "textResponsePart": {
+                  "span": {
+                    "end": 253,
+                    "start": 0
+                  },
+                  "text": "FOGAES es un programa de garantía estatal para financiamiento de viviendas nuevas. Permite a las personas acceder a créditos hipotecarios con mejores condiciones comerciales, ofreciendo hasta un 90% de financiamiento y plazos de hasta 30 años para pagar."
+                }
+              },
+              "retrievedReferences": [
+                {
+                  "content": {
+                    "text": "# Programa de Apoyo a la Vivienda Nueva con Tasa de Interés Subsidiada y Garantía Estatal FOGAES Te apoyamos para la compra de tu vivienda nueva, con y sin subsidio. Este Programa permite al Banco entregar a las personas y familias mejores condiciones comerciales para acceder a un Créditos Hipotecario para financiar una vivienda nueva, con una tasa de interés rebajada, alcanzando hasta el 90% de financiamiento y plazo de hasta 30 años para pagar.",
+                    "type": "TEXT"
+                  },
+                  "location": {
+                    "s3Location": {
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Publico/Fogaes/BD1-00126 - Programa de Apoyo a la Vivienda Nueva con Tasa de Interés Subsidiada y Garantía Estatal FOGAES_v1.0.md"
+                    },
+                    "type": "S3"
+                  },
+                  "metadata": {
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Publico/Fogaes/BD1-00126 - Programa de Apoyo a la Vivienda Nueva con Tasa de Interés Subsidiada y Garantía Estatal FOGAES_v1.0.md",
+                    "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3AyuZx_5sBhZmwEfDMZD3s",
+                    "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                  }
+                }
+              ]
+            },
+            {
+              "generatedResponsePart": {
+                "textResponsePart": {
+                  "span": {
+                    "end": 646,
+                    "start": 255
+                  },
+                  "text": "\nPara ser elegible al programa, hay varios requisitos específicos, como:\n- Ser persona natural\n- Comprar una vivienda nueva (primera venta)\n- El valor de la vivienda no debe superar las 4.000 UF, incluyendo estacionamiento y bodega\n- No tener una promesa de compraventa suscrita antes del 31 de diciembre de 2024\n- No estar inscrito en el Registro Nacional de Deudores de Pensión de Alimentos"
+                }
+              },
+              "retrievedReferences": [
+                {
+                  "content": {
+                    "text": "# Requisitos necesarios para acceder a Tasa de Interés Subsidiada y Garantía Estatal FOGAES Requisitos necesarios para acceder a este programa: Solo para personas naturales. Viviendas nuevas, es decir la primera venta de la vivienda. El valor de la vivienda debe ser hasta UF 4.000, incluyendo estacionamiento y bodega para departamentos. En el caso de Créditos Hipotecarios con Subsidio Habitacional MINVU, el valor de la propiedad no puede superar las UF 3.000. Cliente no debe tener una promesa de compraventa suscrita con anterioridad al 31 de diciembre de 2024. Cliente no debe estar inscrito en el Registro Nacional de Deudores de Pensión de Alimentos que Regula la Ley N°21.389.",
+                    "type": "TEXT"
+                  },
+                  "location": {
+                    "s3Location": {
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Publico/Fogaes/BD1-00127 - Requisitos necesarios para acceder a Tasa de Interés Subsidiada y Garantía Estatal FOGAES_v1.0.md"
+                    },
+                    "type": "S3"
+                  },
+                  "metadata": {
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Publico/Fogaes/BD1-00127 - Requisitos necesarios para acceder a Tasa de Interés Subsidiada y Garantía Estatal FOGAES_v1.0.md",
+                    "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3A_-Zw_5sBhZmwEfDMajqU",
+                    "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                  }
+                },
+                {
+                  "content": {
+                    "text": "# ¿Cómo se verifica que el cliente sea elegible para solicitar este financiamiento? Al momento de solicitar tu financiamiento, el Ejecutivo del Banco validará que cumplas con los requisitos necesarios para acceder al programa Vivienda Nueva con garantía FOGAES.",
+                    "type": "TEXT"
+                  },
+                  "location": {
+                    "s3Location": {
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Publico/Fogaes/BD1-00137 - Cómo se verifica que el cliente sea elegible para solicitar este financiamiento_v1.0.md"
+                    },
+                    "type": "S3"
+                  },
+                  "metadata": {
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Publico/Fogaes/BD1-00137 - Cómo se verifica que el cliente sea elegible para solicitar este financiamiento_v1.0.md",
+                    "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3AXuZx_5sBhZmwEfDMRj1N",
+                    "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "bytes": {
+          "__type": "bytes",
+          "encoding": "base64",
+          "data": "Rk9HQUVTIGVzIHVuIHByb2dyYW1hIGRlIGdhcmFudMOtYSBlc3RhdGFsIHBhcmEgZmluYW5jaWFtaWVudG8gZGUgdml2aWVuZGFzIG51ZXZhcy4gUGVybWl0ZSBhIGxhcyBwZXJzb25hcyBhY2NlZGVyIGEgY3LDqWRpdG9zIGhpcG90ZWNhcmlvcyBjb24gbWVqb3JlcyBjb25kaWNpb25lcyBjb21lcmNpYWxlcywgb2ZyZWNpZW5kbyBoYXN0YSB1biA5MCUgZGUgZmluYW5jaWFtaWVudG8geSBwbGF6b3MgZGUgaGFzdGEgMzAgYcOxb3MgcGFyYSBwYWdhci4gClBhcmEgc2VyIGVsZWdpYmxlIGFsIHByb2dyYW1hLCBoYXkgdmFyaW9zIHJlcXVpc2l0b3MgZXNwZWPDrWZpY29zLCBjb21vOgotIFNlciBwZXJzb25hIG5hdHVyYWwKLSBDb21wcmFyIHVuYSB2aXZpZW5kYSBudWV2YSAocHJpbWVyYSB2ZW50YSkKLSBFbCB2YWxvciBkZSBsYSB2aXZpZW5kYSBubyBkZWJlIHN1cGVyYXIgbGFzIDQuMDAwIFVGLCBpbmNsdXllbmRvIGVzdGFjaW9uYW1pZW50byB5IGJvZGVnYQotIE5vIHRlbmVyIHVuYSBwcm9tZXNhIGRlIGNvbXByYXZlbnRhIHN1c2NyaXRhIGFudGVzIGRlbCAzMSBkZSBkaWNpZW1icmUgZGUgMjAyNAotIE5vIGVzdGFyIGluc2NyaXRvIGVuIGVsIFJlZ2lzdHJvIE5hY2lvbmFsIGRlIERldWRvcmVzIGRlIFBlbnNpw7NuIGRlIEFsaW1lbnRvcw=="
+        }
+      }
+    }
+  ]
+}

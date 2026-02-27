@@ -1,31 +1,323 @@
 {
-  "request": {
-    "agentId": "UKQEMRZQUS",
-    "agentAliasId": "JPSUY1DN1P",
-    "sessionId": "retriever-agent-20260223T213107Z",
-    "inputText": "Qué es casaverso?",
-    "enableTrace": false
-  },
-  "response_metadata": {
-    "ResponseMetadata": {
-      "RequestId": "3383e62b-769c-4c4a-baed-f5a9fd17bb53",
-      "HTTPStatusCode": 200,
-      "HTTPHeaders": {
-        "date": "Mon, 23 Feb 2026 21:31:08 GMT",
-        "content-type": "application/vnd.amazon.eventstream",
-        "transfer-encoding": "chunked",
-        "connection": "keep-alive",
-        "x-amzn-requestid": "3383e62b-769c-4c4a-baed-f5a9fd17bb53",
-        "x-amz-bedrock-agent-session-id": "retriever-agent-20260223T213107Z",
-        "x-amzn-bedrock-agent-content-type": "application/json"
-      },
-      "RetryAttempts": 0
+  "ResponseMetadata": {
+    "RequestId": "f6491ab4-a5b6-4589-bf7f-5082298586f4",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "date": "Fri, 27 Feb 2026 13:21:17 GMT",
+      "content-type": "application/vnd.amazon.eventstream",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "f6491ab4-a5b6-4589-bf7f-5082298586f4",
+      "x-amz-bedrock-agent-session-id": "retriever-agent-20260227T132116Z",
+      "x-amzn-bedrock-agent-content-type": "application/json"
     },
-    "contentType": "application/json",
-    "sessionId": "retriever-agent-20260223T213107Z"
+    "RetryAttempts": 0
   },
-  "agent_text": "CASAVERSO es el ecosistema digital de vivienda y construcción de BancoEstado. Es una plataforma que reúne en un solo lugar todos los servicios relacionados con la vivienda, incluyendo asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites. \nHa sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario, y las nuevas tecnologías emergentes a nivel mundial.",
-  "completion_events": [
+  "contentType": "application/json",
+  "sessionId": "retriever-agent-20260227T132116Z",
+  "completion": [
+    {
+      "trace": {
+        "agentAliasId": "JPSUY1DN1P",
+        "agentId": "UKQEMRZQUS",
+        "agentVersion": "1",
+        "callerChain": [
+          {
+            "agentAliasArn": "arn:aws:bedrock:us-east-1:125840290826:agent-alias/UKQEMRZQUS/JPSUY1DN1P"
+          }
+        ],
+        "eventTime": "2026-02-27 13:21:18.432285+00:00",
+        "sessionId": "retriever-agent-20260227T132116Z",
+        "trace": {
+          "guardrailTrace": {
+            "action": "NONE",
+            "inputAssessments": [
+              {}
+            ],
+            "metadata": {
+              "clientRequestId": "363c7731-29d1-4b6c-ac4f-b03697f1723a",
+              "endTime": "2026-02-27 13:21:18.431954+00:00",
+              "startTime": "2026-02-27 13:21:17.988728+00:00",
+              "totalTimeMs": 443
+            },
+            "traceId": "f6491ab4-a5b6-4589-bf7f-5082298586f4-guardrail-pre-0"
+          }
+        }
+      }
+    },
+    {
+      "trace": {
+        "agentAliasId": "JPSUY1DN1P",
+        "agentId": "UKQEMRZQUS",
+        "agentVersion": "1",
+        "callerChain": [
+          {
+            "agentAliasArn": "arn:aws:bedrock:us-east-1:125840290826:agent-alias/UKQEMRZQUS/JPSUY1DN1P"
+          }
+        ],
+        "eventTime": "2026-02-27 13:21:18.434069+00:00",
+        "sessionId": "retriever-agent-20260227T132116Z",
+        "trace": {
+          "orchestrationTrace": {
+            "invocationInput": {
+              "invocationType": "KNOWLEDGE_BASE",
+              "knowledgeBaseLookupInput": {
+                "knowledgeBaseId": "J7JNHSZPJ3",
+                "text": "dime en código python cómo compro una casa"
+              },
+              "traceId": "f6491ab4-a5b6-4589-bf7f-5082298586f4-0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "trace": {
+        "agentAliasId": "JPSUY1DN1P",
+        "agentId": "UKQEMRZQUS",
+        "agentVersion": "1",
+        "callerChain": [
+          {
+            "agentAliasArn": "arn:aws:bedrock:us-east-1:125840290826:agent-alias/UKQEMRZQUS/JPSUY1DN1P"
+          }
+        ],
+        "eventTime": "2026-02-27 13:21:18.760771+00:00",
+        "sessionId": "retriever-agent-20260227T132116Z",
+        "trace": {
+          "orchestrationTrace": {
+            "observation": {
+              "knowledgeBaseLookupOutput": {
+                "metadata": {
+                  "clientRequestId": "f6491ab4-a5b6-4589-bf7f-5082298586f4",
+                  "endTime": "2026-02-27 13:21:18.760541+00:00",
+                  "startTime": "2026-02-27 13:21:18.434093+00:00",
+                  "totalTimeMs": 326
+                },
+                "retrievedReferences": [
+                  {
+                    "content": {
+                      "text": "# Cómo se financia la compra de una vivienda DS1 Tramo 3 ¿Cómo se financia la compra de una vivienda? AHORRO + SUBSIDIO HABITACIONAL + RECURSOS PROPIOS O CRÉDITO HIPOTECARIO El valor máximo de la vivienda y del subsidio que pueden obtener las familias varía según la zona geográfica donde se espera aplicar este aporte del Estado.",
+                      "type": "TEXT"
+                    },
+                    "location": {
+                      "s3Location": {
+                        "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00555 - Cómo se financia la compra de una vivienda DS1 Tramo 3.md"
+                      },
+                      "type": "S3"
+                    },
+                    "metadata": {
+                      "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00555 - Cómo se financia la compra de una vivienda DS1 Tramo 3.md",
+                      "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                      "x-amz-bedrock-kb-chunk-id": "1%3A0%3AceZw_5sBhZmwEfDM7zwK",
+                      "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                    }
+                  },
+                  {
+                    "content": {
+                      "text": "# Cómo se financia la compra de una vivienda DS1 Tramo 2 ¿Cómo se financia la compra de una vivienda? AHORRO + SUBSIDIO HABITACIONAL + RECURSOS PROPIOS O CREDITO HIPOTECARIO El valor máximo de la vivienda y del subsidio que pueden obtener las familias varía según la zona geográfica donde se espera aplicar este aporte del Estado.",
+                      "type": "TEXT"
+                    },
+                    "location": {
+                      "s3Location": {
+                        "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00554 - Cómo se financia la compra de una vivienda  DS1 Tramo 2.md"
+                      },
+                      "type": "S3"
+                    },
+                    "metadata": {
+                      "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00554 - Cómo se financia la compra de una vivienda  DS1 Tramo 2.md",
+                      "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                      "x-amz-bedrock-kb-chunk-id": "1%3A0%3AIuZw_5sBhZmwEfDMjDun",
+                      "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                    }
+                  },
+                  {
+                    "content": {
+                      "text": "# Cómo se financia la compra de una vivienda DS1 Tramo 1 ¿Cómo se financia la compra de una vivienda? AHORRO + SUBSIDIO HABITACIONAL + RECURSOS PROPIOS O CRÉDITO HIPOTECARIO El valor máximo del subsidio que pueden obtener las familias varía según la zona geográfica donde se espera aplicar este aporte del Estado.",
+                      "type": "TEXT"
+                    },
+                    "location": {
+                      "s3Location": {
+                        "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00553 - Cómo se financia la compra de una vivienda  DS1 Tramo 1.md"
+                      },
+                      "type": "S3"
+                    },
+                    "metadata": {
+                      "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00553 - Cómo se financia la compra de una vivienda  DS1 Tramo 1.md",
+                      "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                      "x-amz-bedrock-kb-chunk-id": "1%3A0%3A7uZw_5sBhZmwEfDMwTu0",
+                      "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                    }
+                  },
+                  {
+                    "content": {
+                      "text": "¿Cómo se financia la compra de una vivienda? AHORRO + APORTE DEL ESTADO (SUBSIDIO BASE MAS COMPLEMENTARIO) + APORTES ADICIONALES OPCIONALES Requisitos generales para postular: Tener mínimo 18 años de edad. Contar con Cédula Nacional de Identidad Vigente. Las personas extranjeras deben presentar Cédula de Identidad para Extranjeros con permanencia definitiva y Certificado de Permanencia Definitiva (emitido por el Departamento de Extranjería del Ministerio del Interior o por Policía de Investigaciones de Chile). Estar inscrito en el Registro Social de Hogares (RSH) y no superar el tramo de calificación socioeconómica del 40% más vulnerable de la población. Acreditar en el RSH un grupo familiar.",
+                      "type": "TEXT"
+                    },
+                    "location": {
+                      "s3Location": {
+                        "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00578 - Subsidio para comprar una vivienda construida de hasta 950 UF DS49.md"
+                      },
+                      "type": "S3"
+                    },
+                    "metadata": {
+                      "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00578 - Subsidio para comprar una vivienda construida de hasta 950 UF DS49.md",
+                      "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                      "x-amz-bedrock-kb-chunk-id": "1%3A0%3AF-Zw_5sBhZmwEfDMizsa",
+                      "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                    }
+                  },
+                  {
+                    "content": {
+                      "text": "Si el proyecto es de mi interés ¿qué pasos debo seguir? Paso 1: Tomar contacto con las inmobiliarias o constructoras que desarrollan el proyecto. Paso 2: Visitar la sala de ventas del proyecto inmobiliario seleccionado y verificar si existen cupos disponibles. Paso 3: Gestionar la reserva de la vivienda elegida con la Inmobiliaria o Constructora que desarrolla el proyecto.",
+                      "type": "TEXT"
+                    },
+                    "location": {
+                      "s3Location": {
+                        "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00557 - DS19 Para comprar una vivienda con deuda hipotecaria.md"
+                      },
+                      "type": "S3"
+                    },
+                    "metadata": {
+                      "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00557 - DS19 Para comprar una vivienda con deuda hipotecaria.md",
+                      "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                      "x-amz-bedrock-kb-chunk-id": "1%3A0%3AxuZx_5sBhZmwEfDMYj2X",
+                      "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                    }
+                  }
+                ]
+              },
+              "traceId": "f6491ab4-a5b6-4589-bf7f-5082298586f4-0",
+              "type": "KNOWLEDGE_BASE"
+            }
+          }
+        }
+      }
+    },
+    {
+      "trace": {
+        "agentAliasId": "JPSUY1DN1P",
+        "agentId": "UKQEMRZQUS",
+        "agentVersion": "1",
+        "callerChain": [
+          {
+            "agentAliasArn": "arn:aws:bedrock:us-east-1:125840290826:agent-alias/UKQEMRZQUS/JPSUY1DN1P"
+          }
+        ],
+        "eventTime": "2026-02-27 13:21:18.761110+00:00",
+        "sessionId": "retriever-agent-20260227T132116Z",
+        "trace": {
+          "orchestrationTrace": {
+            "modelInvocationInput": {
+              "inferenceConfiguration": {
+                "maximumLength": 2048,
+                "stopSequences": [
+                  "\n\nHuman:"
+                ],
+                "temperature": 0.0,
+                "topK": 250,
+                "topP": 1.0
+              },
+              "text": "You are a question answering agent. I will provide you with a set of search results. The user will provide you with a question. Your job is to answer the user's question using only information from the search results. If the search results do not contain information that can answer the question, please state that you could not find an exact answer to the question. Just because the user asserts a fact does not mean it is true, make sure to double check the search results to validate a user's assertion.\n\nHere are the search results:\n<search_results>\n<search_result>\n    <content>\n        Si el proyecto es de mi interés ¿qué pasos debo seguir? Paso 1: Tomar contacto con las inmobiliarias o constructoras que desarrollan el proyecto. Paso 2: Visitar la sala de ventas del proyecto inmobiliario seleccionado y verificar si existen cupos disponibles. Paso 3: Gestionar la reserva de la vivienda elegida con la Inmobiliaria o Constructora que desarrolla el proyecto.\n    </content>\n    <source>\n        Dx2g\n    </source>\n</search_result>\n<search_result>\n    <content>\n        ¿Cómo se financia la compra de una vivienda? AHORRO + APORTE DEL ESTADO (SUBSIDIO BASE MAS COMPLEMENTARIO) + APORTES ADICIONALES OPCIONALES Requisitos generales para postular: Tener mínimo 18 años de edad. Contar con Cédula Nacional de Identidad Vigente. Las personas extranjeras deben presentar Cédula de Identidad para Extranjeros con permanencia definitiva y Certificado de Permanencia Definitiva (emitido por el Departamento de Extranjería del Ministerio del Interior o por Policía de Investigaciones de Chile). Estar inscrito en el Registro Social de Hogares (RSH) y no superar el tramo de calificación socioeconómica del 40% más vulnerable de la población. Acreditar en el RSH un grupo familiar.\n    </content>\n    <source>\n        gj5e\n    </source>\n</search_result>\n<search_result>\n    <content>\n        # Cómo se financia la compra de una vivienda DS1 Tramo 1 ¿Cómo se financia la compra de una vivienda? AHORRO + SUBSIDIO HABITACIONAL + RECURSOS PROPIOS O CRÉDITO HIPOTECARIO El valor máximo del subsidio que pueden obtener las familias varía según la zona geográfica donde se espera aplicar este aporte del Estado.\n    </content>\n    <source>\n        E0VS\n    </source>\n</search_result>\n<search_result>\n    <content>\n        # Cómo se financia la compra de una vivienda DS1 Tramo 2 ¿Cómo se financia la compra de una vivienda? AHORRO + SUBSIDIO HABITACIONAL + RECURSOS PROPIOS O CREDITO HIPOTECARIO El valor máximo de la vivienda y del subsidio que pueden obtener las familias varía según la zona geográfica donde se espera aplicar este aporte del Estado.\n    </content>\n    <source>\n        Zcdr\n    </source>\n</search_result>\n<search_result>\n    <content>\n        # Cómo se financia la compra de una vivienda DS1 Tramo 3 ¿Cómo se financia la compra de una vivienda? AHORRO + SUBSIDIO HABITACIONAL + RECURSOS PROPIOS O CRÉDITO HIPOTECARIO El valor máximo de la vivienda y del subsidio que pueden obtener las familias varía según la zona geográfica donde se espera aplicar este aporte del Estado.\n    </content>\n    <source>\n        Tp9W\n    </source>\n</search_result>\n\n</search_results>\nYou should provide your answer without any inline citations or references to specific sources within the answer text itself. Do not include phrases like \"according to source X\", \"[1]\", \"[source 2, 3]\", etc within your <text> tags.\n\nHowever, you should include <sources> tags at the end of each <answer_part> to specify which source(s) the information came from.\nNote that <sources> may contain multiple <source> if you include information from multiple results in your answer.\n\nDo NOT directly quote the <search_results> in your answer. Your job is to answer the user's question as concisely as possible.\n\nYou must output your answer in the following format. Pay attention and follow the formatting and spacing exactly:\n<answer>\n<answer_part>\n<text>\nfirst answer text\n</text>\n<sources>\n<source>source ID</source>\n</sources>\n</answer_part>\n<answer_part>\n<text>\nsecond answer text\n</text>\n<sources>\n<source>source ID</source>\n</sources>\n</answer_part>\n</answer>",
+              "traceId": "f6491ab4-a5b6-4589-bf7f-5082298586f4-KB-null-0",
+              "type": "KNOWLEDGE_BASE_RESPONSE_GENERATION"
+            }
+          }
+        }
+      }
+    },
+    {
+      "trace": {
+        "agentAliasId": "JPSUY1DN1P",
+        "agentId": "UKQEMRZQUS",
+        "agentVersion": "1",
+        "callerChain": [
+          {
+            "agentAliasArn": "arn:aws:bedrock:us-east-1:125840290826:agent-alias/UKQEMRZQUS/JPSUY1DN1P"
+          }
+        ],
+        "eventTime": "2026-02-27 13:21:25.856214+00:00",
+        "sessionId": "retriever-agent-20260227T132116Z",
+        "trace": {
+          "orchestrationTrace": {
+            "modelInvocationOutput": {
+              "metadata": {
+                "clientRequestId": "77502e73-b8a5-439e-a013-123f70a8ff26",
+                "endTime": "2026-02-27 13:21:25.855113+00:00",
+                "startTime": "2026-02-27 13:21:18.761182+00:00",
+                "totalTimeMs": 7094,
+                "usage": {
+                  "inputTokens": 1243,
+                  "outputTokens": 471
+                }
+              },
+              "rawResponse": {
+                "content": "{\"stop_sequence\":null,\"type\":\"message\",\"id\":\"msg_bdrk_018VwNrTwGrSgvZxygXKTi45\",\"content\":[{\"imageSource\":null,\"reasoningTextSignature\":null,\"reasoningRedactedContent\":null,\"name\":null,\"type\":\"text\",\"id\":null,\"source\":null,\"input\":null,\"is_error\":null,\"text\":\"<answer>\\n<answer_part>\\n<text>\\nPara comprar una casa en Chile, puedes seguir estos pasos en un script de Python:\\n\\ndef comprar_casa():\\n    # Paso 1: Verificar requisitos\\n    edad = input(\\\"Ingrese su edad: \\\")\\n    if int(edad) < 18:\\n        print(\\\"Debe ser mayor de 18 años para comprar una casa\\\")\\n        return False\\n\\n    # Paso 2: Contactar inmobiliarias\\n    inmobiliarias = buscar_inmobiliarias()\\n    proyecto = seleccionar_proyecto(inmobiliarias)\\n\\n    # Paso 3: Visitar sala de ventas\\n    visitar_sala_ventas(proyecto)\\n\\n    # Paso 4: Financiamiento\\n    ahorro = calcular_ahorro()\\n    subsidio = obtener_subsidio_habitacional()\\n    credito = solicitar_credito_hipotecario()\\n\\n    # Paso 5: Reservar vivienda\\n    reservar_vivienda(proyecto)\\n\\n    return True\\n</text>\\n<sources>\\n<source>Dx2g</source>\\n<source>gj5e</source>\\n</sources>\\n</answer_part>\\n\\n<answer_part>\\n<text>\\nRequisitos generales para postular:\\n- Tener mínimo 18 años\\n- Contar con Cédula Nacional de Identidad vigente\\n- Estar inscrito en el Registro Social de Hogares (RSH)\\n- No superar el 40% más vulnerable de la población\\n- Acreditar grupo familiar\\n\\nEl financiamiento típicamente incluye:\\n- Ahorro personal\\n- Subsidio habitacional del Estado\\n- Recursos propios o crédito hipotecario\\n</text>\\n<sources>\\n<source>gj5e</source>\\n<source>E0VS</source>\\n</sources>\\n</answer_part>\\n</answer>\",\"content\":null,\"reasoningText\":null,\"tool_use_id\":null,\"guardContent\":null}],\"model\":\"claude-3-5-haiku-20241022\",\"usage\":{\"input_tokens\":1243,\"output_tokens\":471,\"cache_read_input_tokens\":0,\"cache_creation_input_tokens\":0},\"role\":\"assistant\",\"stop_reason\":\"end_turn\"}"
+              },
+              "traceId": "f6491ab4-a5b6-4589-bf7f-5082298586f4-KB-null-0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "trace": {
+        "agentAliasId": "JPSUY1DN1P",
+        "agentId": "UKQEMRZQUS",
+        "agentVersion": "1",
+        "callerChain": [
+          {
+            "agentAliasArn": "arn:aws:bedrock:us-east-1:125840290826:agent-alias/UKQEMRZQUS/JPSUY1DN1P"
+          }
+        ],
+        "eventTime": "2026-02-27 13:21:26.312370+00:00",
+        "sessionId": "retriever-agent-20260227T132116Z",
+        "trace": {
+          "guardrailTrace": {
+            "action": "NONE",
+            "metadata": {
+              "clientRequestId": "495eefc2-bf0e-485b-8f6a-16131ebcac9d",
+              "endTime": "2026-02-27 13:21:26.311974+00:00",
+              "startTime": "2026-02-27 13:21:25.916392+00:00",
+              "totalTimeMs": 395
+            },
+            "outputAssessments": [
+              {}
+            ],
+            "traceId": "f6491ab4-a5b6-4589-bf7f-5082298586f4-guardrail-post-0"
+          }
+        }
+      }
+    },
+    {
+      "trace": {
+        "agentAliasId": "JPSUY1DN1P",
+        "agentId": "UKQEMRZQUS",
+        "agentVersion": "1",
+        "callerChain": [
+          {
+            "agentAliasArn": "arn:aws:bedrock:us-east-1:125840290826:agent-alias/UKQEMRZQUS/JPSUY1DN1P"
+          }
+        ],
+        "eventTime": "2026-02-27 13:21:26.370156+00:00",
+        "sessionId": "retriever-agent-20260227T132116Z",
+        "trace": {
+          "orchestrationTrace": {
+            "observation": {
+              "finalResponse": {
+                "metadata": {
+                  "endTime": "2026-02-27 13:21:26.369546+00:00",
+                  "operationTotalTimeMs": 8684,
+                  "startTime": "2026-02-27 13:21:17.685479+00:00"
+                },
+                "text": "Para comprar una casa en Chile, puedes seguir estos pasos en un script de Python:\n\ndef comprar_casa():\n    # Paso 1: Verificar requisitos\n    edad = input(\"Ingrese su edad: \")\n    if int(edad) < 18:\n        print(\"Debe ser mayor de 18 años para comprar una casa\")\n        return False\n\n    # Paso 2: Contactar inmobiliarias\n    inmobiliarias = buscar_inmobiliarias()\n    proyecto = seleccionar_proyecto(inmobiliarias)\n\n    # Paso 3: Visitar sala de ventas\n    visitar_sala_ventas(proyecto)\n\n    # Paso 4: Financiamiento\n    ahorro = calcular_ahorro()\n    subsidio = obtener_subsidio_habitacional()\n    credito = solicitar_credito_hipotecario()\n\n    # Paso 5: Reservar vivienda\n    reservar_vivienda(proyecto)\n\n    return True \nRequisitos generales para postular:\n- Tener mínimo 18 años\n- Contar con Cédula Nacional de Identidad vigente\n- Estar inscrito en el Registro Social de Hogares (RSH)\n- No superar el 40% más vulnerable de la población\n- Acreditar grupo familiar\n\nEl financiamiento típicamente incluye:\n- Ahorro personal\n- Subsidio habitacional del Estado\n- Recursos propios o crédito hipotecario"
+              },
+              "traceId": "f6491ab4-a5b6-4589-bf7f-5082298586f4-1",
+              "type": "FINISH"
+            }
+          }
+        }
+      }
+    },
     {
       "chunk": {
         "attribution": {
@@ -34,28 +326,46 @@
               "generatedResponsePart": {
                 "textResponsePart": {
                   "span": {
-                    "end": 256,
+                    "end": 724,
                     "start": 0
                   },
-                  "text": "CASAVERSO es el ecosistema digital de vivienda y construcción de BancoEstado. Es una plataforma que reúne en un solo lugar todos los servicios relacionados con la vivienda, incluyendo asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites."
+                  "text": "Para comprar una casa en Chile, puedes seguir estos pasos en un script de Python:\n\ndef comprar_casa():\n    # Paso 1: Verificar requisitos\n    edad = input(\"Ingrese su edad: \")\n    if int(edad) < 18:\n        print(\"Debe ser mayor de 18 años para comprar una casa\")\n        return False\n\n    # Paso 2: Contactar inmobiliarias\n    inmobiliarias = buscar_inmobiliarias()\n    proyecto = seleccionar_proyecto(inmobiliarias)\n\n    # Paso 3: Visitar sala de ventas\n    visitar_sala_ventas(proyecto)\n\n    # Paso 4: Financiamiento\n    ahorro = calcular_ahorro()\n    subsidio = obtener_subsidio_habitacional()\n    credito = solicitar_credito_hipotecario()\n\n    # Paso 5: Reservar vivienda\n    reservar_vivienda(proyecto)\n\n    return True"
                 }
               },
               "retrievedReferences": [
                 {
                   "content": {
-                    "text": "# Qué es CASAVERSO CASAVERSO es el ecosistema de vivienda y construcción de BancoEstado. Es una plataforma digital donde todos los mundos que hoy están dispersos -asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites- se reúnen en un mismo lugar. CASAVERSO: el universo completo de la vivienda, en un solo lugar.",
+                    "text": "Si el proyecto es de mi interés ¿qué pasos debo seguir? Paso 1: Tomar contacto con las inmobiliarias o constructoras que desarrollan el proyecto. Paso 2: Visitar la sala de ventas del proyecto inmobiliario seleccionado y verificar si existen cupos disponibles. Paso 3: Gestionar la reserva de la vivienda elegida con la Inmobiliaria o Constructora que desarrolla el proyecto.",
                     "type": "TEXT"
                   },
                   "location": {
                     "s3Location": {
-                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00589 - Qué es CASAVERSO.md"
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00557 - DS19 Para comprar una vivienda con deuda hipotecaria.md"
                     },
                     "type": "S3"
                   },
                   "metadata": {
-                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00589 - Qué es CASAVERSO.md",
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00557 - DS19 Para comprar una vivienda con deuda hipotecaria.md",
                     "x-amz-bedrock-kb-source-file-modality": "TEXT",
-                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3ATeZw_5sBhZmwEfDMkTt_",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3AxuZx_5sBhZmwEfDMYj2X",
+                    "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                  }
+                },
+                {
+                  "content": {
+                    "text": "¿Cómo se financia la compra de una vivienda? AHORRO + APORTE DEL ESTADO (SUBSIDIO BASE MAS COMPLEMENTARIO) + APORTES ADICIONALES OPCIONALES Requisitos generales para postular: Tener mínimo 18 años de edad. Contar con Cédula Nacional de Identidad Vigente. Las personas extranjeras deben presentar Cédula de Identidad para Extranjeros con permanencia definitiva y Certificado de Permanencia Definitiva (emitido por el Departamento de Extranjería del Ministerio del Interior o por Policía de Investigaciones de Chile). Estar inscrito en el Registro Social de Hogares (RSH) y no superar el tramo de calificación socioeconómica del 40% más vulnerable de la población. Acreditar en el RSH un grupo familiar.",
+                    "type": "TEXT"
+                  },
+                  "location": {
+                    "s3Location": {
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00578 - Subsidio para comprar una vivienda construida de hasta 950 UF DS49.md"
+                    },
+                    "type": "S3"
+                  },
+                  "metadata": {
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00578 - Subsidio para comprar una vivienda construida de hasta 950 UF DS49.md",
+                    "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3AF-Zw_5sBhZmwEfDMizsa",
                     "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
                   }
                 }
@@ -65,28 +375,46 @@
               "generatedResponsePart": {
                 "textResponsePart": {
                   "span": {
-                    "end": 454,
-                    "start": 258
+                    "end": 1102,
+                    "start": 726
                   },
-                  "text": "\nHa sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario, y las nuevas tecnologías emergentes a nivel mundial."
+                  "text": "\nRequisitos generales para postular:\n- Tener mínimo 18 años\n- Contar con Cédula Nacional de Identidad vigente\n- Estar inscrito en el Registro Social de Hogares (RSH)\n- No superar el 40% más vulnerable de la población\n- Acreditar grupo familiar\n\nEl financiamiento típicamente incluye:\n- Ahorro personal\n- Subsidio habitacional del Estado\n- Recursos propios o crédito hipotecario"
                 }
               },
               "retrievedReferences": [
                 {
                   "content": {
-                    "text": "# El Nuevo Portal CASAVERSO es de BancoEstado Sí, este nuevo portal ha sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario y las nuevas tecnologías emergentes a nivel mundial.",
+                    "text": "¿Cómo se financia la compra de una vivienda? AHORRO + APORTE DEL ESTADO (SUBSIDIO BASE MAS COMPLEMENTARIO) + APORTES ADICIONALES OPCIONALES Requisitos generales para postular: Tener mínimo 18 años de edad. Contar con Cédula Nacional de Identidad Vigente. Las personas extranjeras deben presentar Cédula de Identidad para Extranjeros con permanencia definitiva y Certificado de Permanencia Definitiva (emitido por el Departamento de Extranjería del Ministerio del Interior o por Policía de Investigaciones de Chile). Estar inscrito en el Registro Social de Hogares (RSH) y no superar el tramo de calificación socioeconómica del 40% más vulnerable de la población. Acreditar en el RSH un grupo familiar.",
                     "type": "TEXT"
                   },
                   "location": {
                     "s3Location": {
-                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00582 - El Nuevo Portal CASAVERSO es de BancoEstado.md"
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00578 - Subsidio para comprar una vivienda construida de hasta 950 UF DS49.md"
                     },
                     "type": "S3"
                   },
                   "metadata": {
-                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00582 - El Nuevo Portal CASAVERSO es de BancoEstado.md",
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00578 - Subsidio para comprar una vivienda construida de hasta 950 UF DS49.md",
                     "x-amz-bedrock-kb-source-file-modality": "TEXT",
-                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3Aq-Zw_5sBhZmwEfDMtzv4",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3AF-Zw_5sBhZmwEfDMizsa",
+                    "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+                  }
+                },
+                {
+                  "content": {
+                    "text": "# Cómo se financia la compra de una vivienda DS1 Tramo 1 ¿Cómo se financia la compra de una vivienda? AHORRO + SUBSIDIO HABITACIONAL + RECURSOS PROPIOS O CRÉDITO HIPOTECARIO El valor máximo del subsidio que pueden obtener las familias varía según la zona geográfica donde se espera aplicar este aporte del Estado.",
+                    "type": "TEXT"
+                  },
+                  "location": {
+                    "s3Location": {
+                      "uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00553 - Cómo se financia la compra de una vivienda  DS1 Tramo 1.md"
+                    },
+                    "type": "S3"
+                  },
+                  "metadata": {
+                    "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Sitio Externos/Minvu/Subsidios/Comprar una Vivienda/BD1-00553 - Cómo se financia la compra de una vivienda  DS1 Tramo 1.md",
+                    "x-amz-bedrock-kb-source-file-modality": "TEXT",
+                    "x-amz-bedrock-kb-chunk-id": "1%3A0%3A7uZw_5sBhZmwEfDMwTu0",
                     "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
                   }
                 }
@@ -94,9 +422,12 @@
             }
           ]
         },
-        "bytes": "CASAVERSO es el ecosistema digital de vivienda y construcción de BancoEstado. Es una plataforma que reúne en un solo lugar todos los servicios relacionados con la vivienda, incluyendo asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites. \nHa sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario, y las nuevas tecnologías emergentes a nivel mundial."
+        "bytes": {
+          "__type": "bytes",
+          "encoding": "base64",
+          "data": "UGFyYSBjb21wcmFyIHVuYSBjYXNhIGVuIENoaWxlLCBwdWVkZXMgc2VndWlyIGVzdG9zIHBhc29zIGVuIHVuIHNjcmlwdCBkZSBQeXRob246CgpkZWYgY29tcHJhcl9jYXNhKCk6CiAgICAjIFBhc28gMTogVmVyaWZpY2FyIHJlcXVpc2l0b3MKICAgIGVkYWQgPSBpbnB1dCgiSW5ncmVzZSBzdSBlZGFkOiAiKQogICAgaWYgaW50KGVkYWQpIDwgMTg6CiAgICAgICAgcHJpbnQoIkRlYmUgc2VyIG1heW9yIGRlIDE4IGHDsW9zIHBhcmEgY29tcHJhciB1bmEgY2FzYSIpCiAgICAgICAgcmV0dXJuIEZhbHNlCgogICAgIyBQYXNvIDI6IENvbnRhY3RhciBpbm1vYmlsaWFyaWFzCiAgICBpbm1vYmlsaWFyaWFzID0gYnVzY2FyX2lubW9iaWxpYXJpYXMoKQogICAgcHJveWVjdG8gPSBzZWxlY2Npb25hcl9wcm95ZWN0byhpbm1vYmlsaWFyaWFzKQoKICAgICMgUGFzbyAzOiBWaXNpdGFyIHNhbGEgZGUgdmVudGFzCiAgICB2aXNpdGFyX3NhbGFfdmVudGFzKHByb3llY3RvKQoKICAgICMgUGFzbyA0OiBGaW5hbmNpYW1pZW50bwogICAgYWhvcnJvID0gY2FsY3VsYXJfYWhvcnJvKCkKICAgIHN1YnNpZGlvID0gb2J0ZW5lcl9zdWJzaWRpb19oYWJpdGFjaW9uYWwoKQogICAgY3JlZGl0byA9IHNvbGljaXRhcl9jcmVkaXRvX2hpcG90ZWNhcmlvKCkKCiAgICAjIFBhc28gNTogUmVzZXJ2YXIgdml2aWVuZGEKICAgIHJlc2VydmFyX3ZpdmllbmRhKHByb3llY3RvKQoKICAgIHJldHVybiBUcnVlIApSZXF1aXNpdG9zIGdlbmVyYWxlcyBwYXJhIHBvc3R1bGFyOgotIFRlbmVyIG3DrW5pbW8gMTggYcOxb3MKLSBDb250YXIgY29uIEPDqWR1bGEgTmFjaW9uYWwgZGUgSWRlbnRpZGFkIHZpZ2VudGUKLSBFc3RhciBpbnNjcml0byBlbiBlbCBSZWdpc3RybyBTb2NpYWwgZGUgSG9nYXJlcyAoUlNIKQotIE5vIHN1cGVyYXIgZWwgNDAlIG3DoXMgdnVsbmVyYWJsZSBkZSBsYSBwb2JsYWNpw7NuCi0gQWNyZWRpdGFyIGdydXBvIGZhbWlsaWFyCgpFbCBmaW5hbmNpYW1pZW50byB0w61waWNhbWVudGUgaW5jbHV5ZToKLSBBaG9ycm8gcGVyc29uYWwKLSBTdWJzaWRpbyBoYWJpdGFjaW9uYWwgZGVsIEVzdGFkbwotIFJlY3Vyc29zIHByb3Bpb3MgbyBjcsOpZGl0byBoaXBvdGVjYXJpbw=="
+        }
       }
     }
-  ],
-  "saved_at_utc": "2026-02-23T21:31:13.389240+00:00"
+  ]
 }
