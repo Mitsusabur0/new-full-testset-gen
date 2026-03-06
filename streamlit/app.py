@@ -111,6 +111,29 @@ def load_metric_descriptions() -> dict[str, dict[str, str]]:
     return out
 
 
+def _load_run_summary(dataset_path: Path) -> str:
+    if not dataset_path.name.endswith(".parquet"):
+        return ""
+    summary_path = dataset_path.parent / "run_summary.md"
+    if not summary_path.exists():
+        return ""
+    try:
+        return summary_path.read_text(encoding="utf-8")
+    except Exception:
+        return ""
+
+
+def render_run_summary_tab(dataset_path: Path) -> None:
+    summary_md = _load_run_summary(dataset_path)
+
+    if not summary_md:
+        st.info("No se encontró un `run_summary.md` para este dataset.")
+        st.caption(f"Ruta esperada: { (dataset_path.parent / 'run_summary.md') }")
+        return
+
+    st.markdown(summary_md, unsafe_allow_html=True)
+
+
 # --- STYLING ---
 
 CSS = """
@@ -618,7 +641,7 @@ def value_to_color(value: float | None) -> str | None:
 def _available_datasets() -> list[Path]:
     if not DATASETS_DIR.exists():
         return []
-    return sorted(DATASETS_DIR.glob("*.parquet"))
+    return sorted(DATASETS_DIR.glob("**/*.parquet"))
 
 
 def _render_kpi_cards(
@@ -869,7 +892,7 @@ def render_compare_datasets_tab() -> None:
         st.error(f"No se encontraron archivos parquet en {DATASETS_DIR}")
         return
 
-    options = [p.name for p in dataset_paths]
+    options = [str(p.relative_to(DATASETS_DIR)) for p in dataset_paths]
     metric_descriptions = load_metric_descriptions()
 
     custom_metrics = [
@@ -972,11 +995,11 @@ def select_dataset() -> Path | None:
         if not DATASETS_DIR.exists():
             st.error(f"No se encontró la carpeta de conjuntos de datos: {DATASETS_DIR}")
             return None
-        parquet_files = sorted(DATASETS_DIR.glob("*.parquet"))
+        parquet_files = sorted(DATASETS_DIR.glob("**/*.parquet"))
         if not parquet_files:
             st.error(f"No se encontraron archivos parquet en {DATASETS_DIR}")
             return None
-        options = [p.name for p in parquet_files]
+        options = [str(p.relative_to(DATASETS_DIR)) for p in parquet_files]
         selected_name = st.selectbox("Seleccionar conjunto de datos", options)
         return DATASETS_DIR / selected_name
 
@@ -1022,15 +1045,23 @@ def main() -> None:
         st.warning("Ningún dato coincide con los filtros seleccionados.")
         return
 
-    tab1, tab2, tab3 = st.tabs(["Métricas globales", "Explorador de casos de prueba", "Comparar datasets"])
+    tab1, tab2, tab3, tab4 = st.tabs([
+        "Métricas globales",
+        "Análisis de resultados",
+        "Explorador de casos de prueba",
+        "Comparar datasets",
+    ])
     
     with tab1:
         render_global_metrics_overview_tab(filtered_df)
 
     with tab2:
-        render_case_explorer(filtered_df)
+        render_run_summary_tab(dataset_path)
 
     with tab3:
+        render_case_explorer(filtered_df)
+
+    with tab4:
         render_compare_datasets_tab()
 
 
