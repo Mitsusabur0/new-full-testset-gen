@@ -1,16 +1,16 @@
 {
-  "query": "qué es casaverso?",
+  "query": "que es casaverso?",
   "top_k": 3,
   "response": {
     "ResponseMetadata": {
-      "RequestId": "de634033-b69f-4425-a503-af90336a8a63",
+      "RequestId": "c1b95471-e9f6-4914-95e9-d526d2e9ff72",
       "HTTPStatusCode": 200,
       "HTTPHeaders": {
-        "date": "Mon, 23 Feb 2026 17:46:02 GMT",
+        "date": "Fri, 06 Mar 2026 18:02:43 GMT",
         "content-type": "application/json",
-        "content-length": "2365",
+        "content-length": "2363",
         "connection": "keep-alive",
-        "x-amzn-requestid": "de634033-b69f-4425-a503-af90336a8a63"
+        "x-amzn-requestid": "c1b95471-e9f6-4914-95e9-d526d2e9ff72"
       },
       "RetryAttempts": 0
     },
@@ -32,7 +32,7 @@
           "x-amz-bedrock-kb-chunk-id": "1%3A0%3ATeZw_5sBhZmwEfDMkTt_",
           "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
         },
-        "score": 0.72586304
+        "score": 0.712527
       },
       {
         "content": {
@@ -51,7 +51,7 @@
           "x-amz-bedrock-kb-chunk-id": "1%3A0%3Aq-Zw_5sBhZmwEfDMtzv4",
           "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
         },
-        "score": 0.5175022
+        "score": 0.5146032
       },
       {
         "content": {
@@ -70,7 +70,7 @@
           "x-amz-bedrock-kb-chunk-id": "1%3A0%3AKeZw_5sBhZmwEfDMjTuQ",
           "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
         },
-        "score": 0.46137384
+        "score": 0.45601544
       }
     ]
   }

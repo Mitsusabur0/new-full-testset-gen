@@ -14,6 +14,7 @@ AWS_PROFILE = "sandbox"
 AWS_REGION = "us-east-1"
 KB_SERVICE = "bedrock-agent-runtime"
 KB_ID = "J7JNHSZPJ3"
+# KB_ID = "XVGYAK42UC"
 
 # Query and retrieval settings
 QUERY = "que es casaverso?"

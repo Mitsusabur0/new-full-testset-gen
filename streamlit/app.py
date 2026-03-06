@@ -713,8 +713,7 @@ def render_global_metrics_overview_tab(df: pd.DataFrame) -> None:
     custom_metrics = [
         ("MRR", "custom_mrr", "float"),
         ("Tasa de aciertos", "custom_hit_rate", "percent"),
-        ("Precisión@K", "custom_precision_at_k", "float"),
-        ("Precision@K - Reranker", "precision_at_k_relevance", "float"),
+        ("Precision@K", "precision_at_k_relevance", "float"),
         ("Cobertura@K", "custom_recall_at_k", "float"),
     ]
     metric_descriptions = load_metric_descriptions()
@@ -743,8 +742,7 @@ def render_by_query_style_tab(df: pd.DataFrame) -> None:
     custom_metrics = [
         ("MRR", "custom_mrr", "float"),
         ("Tasa de aciertos", "custom_hit_rate", "percent"),
-        ("Precisión@K", "custom_precision_at_k", "float"),
-        ("Precision@K - Reranker", "precision_at_k_relevance", "float"),
+        ("Precision@K", "precision_at_k_relevance", "float"),
         ("Cobertura@K", "custom_recall_at_k", "float"),
     ]
     render_interactive_metric_group(
@@ -816,7 +814,7 @@ def render_case_explorer(df: pd.DataFrame) -> None:
 
         score_row("MRR", row.get("custom_mrr"))
         score_row("Tasa de aciertos", row.get("custom_hit_rate"))
-        score_row("Precision@K - Reranker", row.get("precision_at_k_relevance"))
+        score_row("Precision@K", row.get("precision_at_k_relevance"))
 
     st.markdown("---")
 
@@ -877,8 +875,7 @@ def render_compare_datasets_tab() -> None:
     custom_metrics = [
         ("MRR", "custom_mrr", "float"),
         ("Tasa de aciertos", "custom_hit_rate", "percent"),
-        ("Precisión@K", "custom_precision_at_k", "float"),
-        ("Precision@K - Reranker", "precision_at_k_relevance", "float"),
+        ("Precision@K", "precision_at_k_relevance", "float"),
         ("Cobertura@K", "custom_recall_at_k", "float"),
     ]
 

@@ -1,0 +1,77 @@
+{
+  "query": "qué es casaverso?",
+  "top_k": 3,
+  "response": {
+    "ResponseMetadata": {
+      "RequestId": "de634033-b69f-4425-a503-af90336a8a63",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "date": "Mon, 23 Feb 2026 17:46:02 GMT",
+        "content-type": "application/json",
+        "content-length": "2365",
+        "connection": "keep-alive",
+        "x-amzn-requestid": "de634033-b69f-4425-a503-af90336a8a63"
+      },
+      "RetryAttempts": 0
+    },
+    "retrievalResults": [
+      {
+        "content": {
+          "text": "# Qué es CASAVERSO CASAVERSO es el ecosistema de vivienda y construcción de BancoEstado. Es una plataforma digital donde todos los mundos que hoy están dispersos -asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites- se reúnen en un mismo lugar. CASAVERSO: el universo completo de la vivienda, en un solo lugar.",
+          "type": "TEXT"
+        },
+        "location": {
+          "s3Location": {
+            "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00589 - Qué es CASAVERSO.md"
+          },
+          "type": "S3"
+        },
+        "metadata": {
+          "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00589 - Qué es CASAVERSO.md",
+          "x-amz-bedrock-kb-source-file-modality": "TEXT",
+          "x-amz-bedrock-kb-chunk-id": "1%3A0%3ATeZw_5sBhZmwEfDMkTt_",
+          "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+        },
+        "score": 0.72586304
+      },
+      {
+        "content": {
+          "text": "# El Nuevo Portal CASAVERSO es de BancoEstado Sí, este nuevo portal ha sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario y las nuevas tecnologías emergentes a nivel mundial.",
+          "type": "TEXT"
+        },
+        "location": {
+          "s3Location": {
+            "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00582 - El Nuevo Portal CASAVERSO es de BancoEstado.md"
+          },
+          "type": "S3"
+        },
+        "metadata": {
+          "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00582 - El Nuevo Portal CASAVERSO es de BancoEstado.md",
+          "x-amz-bedrock-kb-source-file-modality": "TEXT",
+          "x-amz-bedrock-kb-chunk-id": "1%3A0%3Aq-Zw_5sBhZmwEfDMtzv4",
+          "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+        },
+        "score": 0.5175022
+      },
+      {
+        "content": {
+          "text": "# El Nuevo Portal CASAVERSO es seguro El nuevo portal cumple con todas las condiciones y exigencias que nos rigen como instituciones financieras en materia de seguridad informática y uso de datos personales.",
+          "type": "TEXT"
+        },
+        "location": {
+          "s3Location": {
+            "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00583 - El Nuevo Portal CASAVERSO es seguro.md"
+          },
+          "type": "S3"
+        },
+        "metadata": {
+          "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00583 - El Nuevo Portal CASAVERSO es seguro.md",
+          "x-amz-bedrock-kb-source-file-modality": "TEXT",
+          "x-amz-bedrock-kb-chunk-id": "1%3A0%3AKeZw_5sBhZmwEfDMjTuQ",
+          "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
+        },
+        "score": 0.46137384
+      }
+    ]
+  }
+}

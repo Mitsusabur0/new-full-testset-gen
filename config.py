@@ -2,7 +2,7 @@ import os
 
 # --- PATHS ---
 KB_FOLDER = os.getenv("KB_FOLDER", "./kb_small_testfolder")
-PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/small_test")
+PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/full_test_reranker")
 
 
 PIPELINE_CSV = os.getenv(
@@ -27,6 +27,9 @@ AWS_PROFILE_SANDBOX = os.getenv("AWS_PROFILE_SANDBOX", "sandbox")
 
 AWS_PROFILE_DESA_BEDROCK = os.getenv("AWS_PROFILE_DESA_BEDROCK", "943897082379_BECH_ReadOnlyBedrock")
 AWS_PROFILE_DESA_ACCESS = os.getenv("AWS_PROFILE_DESA_ACCESS", "943897082379_BECH_ReadOnlyAccess")
+AWS_PROFILE_TEST_BEDROCK = os.getenv("AWS_PROFILE_TEST_BEDROCK", "744139898209_BECH_ReadOnlyBedrock")
+
+
 
 # --- LLM CONFIG ---
 MODEL_ID = os.getenv("MODEL_ID", "openai.gpt-oss-120b-1:0")
