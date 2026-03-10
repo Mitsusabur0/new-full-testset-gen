@@ -2,7 +2,7 @@ import os
 
 # --- PATHS ---
 KB_FOLDER = os.getenv("KB_FOLDER", "./kb_small_testfolder")
-PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/full_test_reranker")
+PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/full_run_512")
 
 
 PIPELINE_CSV = os.getenv(
@@ -13,11 +13,11 @@ OUTPUT_RESULTS_PARQUET = os.getenv(
     "OUTPUT_RESULTS_PARQUET",
     os.path.join(PIPELINE_OUTPUT_DIR, "pipeline_state.parquet")
 )
-
+    
 # --- AWS CONFIG ---
 KB_SERVICE = os.getenv("KB_SERVICE", "bedrock-agent-runtime")
-KB_ID = os.getenv("KB_ID", "J7JNHSZPJ3")
-# KB_ID = os.getenv("KB_ID", "3TPM53DPBN")
+KB_ID_200 = os.getenv("KB_ID_200", "J7JNHSZPJ3")
+KB_ID_512 = os.getenv("KB_ID_512", "V8C4GPJB9I")
 
 AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
 AWS_PROFILE_LLM = os.getenv("AWS_PROFILE_DEFAULT", "default")
@@ -27,6 +27,7 @@ AWS_PROFILE_SANDBOX = os.getenv("AWS_PROFILE_SANDBOX", "sandbox")
 
 AWS_PROFILE_DESA_BEDROCK = os.getenv("AWS_PROFILE_DESA_BEDROCK", "943897082379_BECH_ReadOnlyBedrock")
 AWS_PROFILE_DESA_ACCESS = os.getenv("AWS_PROFILE_DESA_ACCESS", "943897082379_BECH_ReadOnlyAccess")
+
 AWS_PROFILE_TEST_BEDROCK = os.getenv("AWS_PROFILE_TEST_BEDROCK", "744139898209_BECH_ReadOnlyBedrock")
 
 

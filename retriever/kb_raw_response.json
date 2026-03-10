@@ -1,76 +1,76 @@
 {
-  "query": "que es casaverso?",
+  "query": "cuenta rut faq",
   "top_k": 3,
   "response": {
     "ResponseMetadata": {
-      "RequestId": "c1b95471-e9f6-4914-95e9-d526d2e9ff72",
+      "RequestId": "f691a7fa-ab3d-4946-84e8-28ff1821996e",
       "HTTPStatusCode": 200,
       "HTTPHeaders": {
-        "date": "Fri, 06 Mar 2026 18:02:43 GMT",
+        "date": "Mon, 09 Mar 2026 15:25:33 GMT",
         "content-type": "application/json",
-        "content-length": "2363",
+        "content-length": "3842",
         "connection": "keep-alive",
-        "x-amzn-requestid": "c1b95471-e9f6-4914-95e9-d526d2e9ff72"
+        "x-amzn-requestid": "f691a7fa-ab3d-4946-84e8-28ff1821996e"
       },
       "RetryAttempts": 0
     },
     "retrievalResults": [
       {
         "content": {
-          "text": "# Qué es CASAVERSO CASAVERSO es el ecosistema de vivienda y construcción de BancoEstado. Es una plataforma digital donde todos los mundos que hoy están dispersos -asesoría, financiamiento, inmobiliarias, corredores, notarías y trámites- se reúnen en un mismo lugar. CASAVERSO: el universo completo de la vivienda, en un solo lugar.",
+          "text": "También puedes obtenerla, a través de los Módulos de Atención Remota disponibles en las 73 comunas que hoy no disponen de servicios bancarios. 2.- Si aún no soy Cliente del banco, ¿cómo puedo obtener CuentaRUT de forma 100% digital? Te recomendamos realizarlo directamente desde la App BancoEstado, que puedes descargar desde “Play Store”, “Apple Store” ó “App Gallery, y sigue los pasos a continuación: Ingresa tu RUT y selecciona opción “abrir CuentaRUT” Necesitaremos confirmar tu identidad escaneando tu cédula de identidad por ambos lados y solicitaremos una foto de tu rostro. Te pediremos el ingreso de tu teléfono celular y email. Ambos registros quedarán guardados como datos de seguridad. Te enviaremos un SMS para validar información.",
           "type": "TEXT"
         },
         "location": {
           "s3Location": {
-            "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00589 - Qué es CASAVERSO.md"
+            "uri": "s3://pec-cc-ai-sand-concierge-data/data/Educacion Financiera/Cuidar Tu Dinero/Detalle Cuidar Tu Dinero/BD1-00050 - Preguntas frecuentes CuentaRUT_v1.0.md"
           },
           "type": "S3"
         },
         "metadata": {
-          "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00589 - Qué es CASAVERSO.md",
+          "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Educacion Financiera/Cuidar Tu Dinero/Detalle Cuidar Tu Dinero/BD1-00050 - Preguntas frecuentes CuentaRUT_v1.0.md",
           "x-amz-bedrock-kb-source-file-modality": "TEXT",
-          "x-amz-bedrock-kb-chunk-id": "1%3A0%3ATeZw_5sBhZmwEfDMkTt_",
+          "x-amz-bedrock-kb-chunk-id": "1%3A0%3AK-Zw_5sBhZmwEfDM5TxW",
           "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
         },
-        "score": 0.712527
+        "score": 0.5198939
       },
       {
         "content": {
-          "text": "# El Nuevo Portal CASAVERSO es de BancoEstado Sí, este nuevo portal ha sido desarrollado por BancoEstado considerando las necesidades de los clientes, las condiciones actuales y futuras del mercado inmobiliario y las nuevas tecnologías emergentes a nivel mundial.",
+          "text": "Selecciona tu cuenta de cargo. Acepta con BE Pass, y listo! 5.- ¿El Delivery de CuentaRUT tiene costo? La reposición de la tarjeta que incluye el delivery, tiene un costo de $3.900 a excepción de la reposición de tarjetas con banda magnética y que no tienen chip. En este caso, por ser tarjetas antiguas el servicio de reposición con delivery es gratuito. 6.- ¿Cuánto se demora la entrega de una tarjeta CuentaRUT con Delivery? La entrega de una tarjeta CuentaRUT puede demorar entre 3 y 8 días hábiles, dependiendo de la zona geográfica. 7.-¿Cómo puedo activar mi tarjeta CuentaRUT recibida en mi domicilio?",
           "type": "TEXT"
         },
         "location": {
           "s3Location": {
-            "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00582 - El Nuevo Portal CASAVERSO es de BancoEstado.md"
+            "uri": "s3://pec-cc-ai-sand-concierge-data/data/Educacion Financiera/Cuidar Tu Dinero/Detalle Cuidar Tu Dinero/BD1-00050 - Preguntas frecuentes CuentaRUT_v1.0.md"
           },
           "type": "S3"
         },
         "metadata": {
-          "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00582 - El Nuevo Portal CASAVERSO es de BancoEstado.md",
+          "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Educacion Financiera/Cuidar Tu Dinero/Detalle Cuidar Tu Dinero/BD1-00050 - Preguntas frecuentes CuentaRUT_v1.0.md",
           "x-amz-bedrock-kb-source-file-modality": "TEXT",
-          "x-amz-bedrock-kb-chunk-id": "1%3A0%3Aq-Zw_5sBhZmwEfDMtzv4",
+          "x-amz-bedrock-kb-chunk-id": "1%3A0%3ALuZw_5sBhZmwEfDM5TxW",
           "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
         },
-        "score": 0.5146032
+        "score": 0.50984716
       },
       {
         "content": {
-          "text": "# El Nuevo Portal CASAVERSO es seguro El nuevo portal cumple con todas las condiciones y exigencias que nos rigen como instituciones financieras en materia de seguridad informática y uso de datos personales.",
+          "text": "La entrega de una tarjeta CuentaRUT puede demorar entre 3 y 8 días hábiles, dependiendo de la zona geográfica. 7.-¿Cómo puedo activar mi tarjeta CuentaRUT recibida en mi domicilio? Podrás activarla apenas la recibas, en tu misma App BancoEstado, ingresando al menú inferior “Productos” y luego “Reposición y Activación de tarjetas”. Es muy sencillo, deberás ingresar los 4 últimos dígitos de tu tarjeta y la fecha de vencimiento. Luego, debes autorizar esta transacción ingresando tu BE Pass. BE Pay 8.- ¿Cómo puedo vincular mis tarjetas BancoEstado para pagar con BE Pay?",
           "type": "TEXT"
         },
         "location": {
           "s3Location": {
-            "uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00583 - El Nuevo Portal CASAVERSO es seguro.md"
+            "uri": "s3://pec-cc-ai-sand-concierge-data/data/Educacion Financiera/Cuidar Tu Dinero/Detalle Cuidar Tu Dinero/BD1-00050 - Preguntas frecuentes CuentaRUT_v1.0.md"
           },
           "type": "S3"
         },
         "metadata": {
-          "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Banco/CasaVerso/BD1-00583 - El Nuevo Portal CASAVERSO es seguro.md",
+          "x-amz-bedrock-kb-source-uri": "s3://pec-cc-ai-sand-concierge-data/data/Educacion Financiera/Cuidar Tu Dinero/Detalle Cuidar Tu Dinero/BD1-00050 - Preguntas frecuentes CuentaRUT_v1.0.md",
           "x-amz-bedrock-kb-source-file-modality": "TEXT",
-          "x-amz-bedrock-kb-chunk-id": "1%3A0%3AKeZw_5sBhZmwEfDMjTuQ",
+          "x-amz-bedrock-kb-chunk-id": "1%3A0%3AL-Zw_5sBhZmwEfDM5TxW",
           "x-amz-bedrock-kb-data-source-id": "A7AFGHKZ0Y"
         },
-        "score": 0.45601544
+        "score": 0.4885507
       }
     ]
   }

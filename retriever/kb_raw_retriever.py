@@ -10,14 +10,18 @@ from botocore.exceptions import ClientError
 # -----------------------------
 # CONFIGURATION (edit as needed)
 # -----------------------------
-AWS_PROFILE = "sandbox"
 AWS_REGION = "us-east-1"
 KB_SERVICE = "bedrock-agent-runtime"
+AWS_PROFILE = "sandbox"
 KB_ID = "J7JNHSZPJ3"
-# KB_ID = "XVGYAK42UC"
+# KB_ID = "V8C4GPJB9I"
+# AWS_PROFILE = "744139898209_BECH_ReadOnlyBedrock"
+# KB_ID = "1ZVP2CP9OU"
+# AWS_PROFILE = "943897082379_BECH_ReadOnlyBedrock"
+# KB_ID = "LN9GUWZJT6"
 
 # Query and retrieval settings
-QUERY = "que es casaverso?"
+QUERY = "cuenta rut faq"
 TOP_K = 3
 
 # Retry settings

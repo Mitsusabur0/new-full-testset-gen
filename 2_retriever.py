@@ -56,7 +56,7 @@ def extract_s3_uri(uri):
 def retrieve_contexts(query, client, error_log):
     def _call():
         return client.retrieve(
-            knowledgeBaseId=config.KB_ID,
+            knowledgeBaseId=config.KB_ID_512,
             retrievalQuery={
                 'text': query
             },

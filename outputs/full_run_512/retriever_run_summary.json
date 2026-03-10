@@ -1,0 +1,480 @@
+{
+  "retrieved": 5194,
+  "errors": [
+    {
+      "timestamp": "2026-03-09T17:53:31.587181Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T17:54:14.400154Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T17:54:50.530120Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T17:55:27.401325Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T17:56:04.154599Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T17:56:31.932386Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T17:57:11.069727Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T17:57:47.236162Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T17:58:18.028662Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T17:58:57.420520Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T17:59:31.245504Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:00:04.284618Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:00:31.764145Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:01:08.235885Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:01:40.142512Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:02:20.333595Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:03:05.173964Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:03:42.058927Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:04:15.960233Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:04:46.505021Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:05:32.842844Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:06:17.291819Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:06:52.901982Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:07:30.120903Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:08:05.522481Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:08:50.827878Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:09:29.948566Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:10:00.552914Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:10:43.136693Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:11:22.259822Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:11:55.796952Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:12:28.833524Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:13:08.413237Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:13:42.471879Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:14:24.645308Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:14:53.202960Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:15:34.451768Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:16:17.665812Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:16:51.745034Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:17:25.295583Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:17:59.015390Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:18:25.789966Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:19:01.667454Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:19:37.866776Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:20:20.228776Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:21:10.158528Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:21:49.142932Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:22:23.169246Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:23:12.916064Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:23:55.805010Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:24:33.510426Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:25:07.545799Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:25:38.260671Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:26:12.571297Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:26:58.573674Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:27:36.411466Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:28:20.419660Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:28:58.894551Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:29:42.138433Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:30:16.932115Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:30:47.333449Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:31:32.736516Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:32:13.724850Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:32:55.426162Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:33:37.359765Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:34:16.120417Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:34:58.594516Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:35:33.485598Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:36:12.887839Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:36:45.460762Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:37:28.916422Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:38:08.111480Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:38:44.062071Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:39:22.655650Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:39:58.870339Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:40:40.905719Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:41:16.135123Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:41:52.194978Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:42:17.635580Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:43:03.580661Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:43:43.646249Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:44:21.944916Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:44:53.547943Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:45:38.125778Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:46:17.235129Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:46:47.316511Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:47:35.068653Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:48:10.800923Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:48:45.078874Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:49:32.585130Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:50:11.955402Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:50:47.930386Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:51:18.859222Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:51:55.759751Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    },
+    {
+      "timestamp": "2026-03-09T18:52:33.879271Z",
+      "operation": "retrieve",
+      "error": "Could not connect to the endpoint URL: \"https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/V8C4GPJB9I/retrieve\""
+    }
+  ]
+}
