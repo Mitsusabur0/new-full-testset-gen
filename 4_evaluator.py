@@ -11,7 +11,7 @@ from botocore.exceptions import ClientError
 import config
 
 
-output_file = "full_reranker_0.1"
+output_file = "full_run_200"
 
 REQUIRED_COLUMNS = [
     "reference_contexts",
@@ -92,7 +92,7 @@ Eres un analista de evaluación de sistemas RAG.
 Responde SOLO en ESPAÑOL y SOLO en markdown, con formato estricto y consistente.
 """
     user_prompt = f"""
-Resumen una corrida de evaluación con los siguientes resultados agregados:
+Este es el resumen de una pasada de evaluación con los siguientes resultados agregados:
 - Nombre de corrida: {output_name}
 - Total de casos evaluados: {metrics["total_rows"]}
 - hit rate promedio: {metrics["avg_hit_rate"]}
@@ -101,26 +101,24 @@ Resumen una corrida de evaluación con los siguientes resultados agregados:
 - recall@k promedio: {metrics["avg_recall_at_k"]}
 
 Genera un resumen técnico en markdown con EXACTAMENTE 1 sección y sin texto fuera de markdown:
-## Interpretación de resultados
 
 Reglas de salida:
-- Solo esa sección: “## Interpretación de los resultados”.
+- Solo una sección: “## Interpretación de los resultados”.
 - La sección debe ser una tabla markdown con EXACTAMENTE 4 filas, con columnas: `Métrica`, `Cálculo` y `Interpretación`.
-- No agregues texto fuera de la tabla dentro de la sección.
+- No agregues texto fuera de la tabla.
 - Mantén siempre el orden: hit rate, mrr, precision@k, recall@k.
 - Para cada métrica:
-  - Indica primero cómo se calcula (en 1 línea).
+  - Indica primero cómo se calcula en nuestro pipeline (en 1 línea).
   - Luego interpreta qué significa el valor en rendimiento del RAG (1 línea).
-- Usa texto breve pero con un poco más de contexto que antes (sin ser excesivamente extenso).
 - Incluye explícitamente esta limitación en una línea: recall@k = hit rate, dado que los casos sintéticos usan un solo archivo fuente por consulta y solo se garantiza si ese archivo fue recuperado.
-- Explica que usamos un modelo que asigna `relevance_score` a cada contexto recuperado en función de su similitud con el `user_input`, y que aplicamos el umbral 0.5 para calcular precision@k. 
+- En precision@K, explica que usamos un modelo que asigna `relevance_score` a cada contexto recuperado en función de su similitud con el `user_input`, y que aplicamos el umbral 0.5 para calcular precision@k. 
   Esto permite medir la relevancia real de cada contexto recuperado dentro de los k documentos, en lugar de depender solo de coincidencias de ruta.
-  Si solo se usara coincidencia de `source_file`, precision@k quedaría acotada a un máximo teórico de 1/k aunque los contextos recuperados fueran relevantes.
+  Si solo se usara coincidencia de `source_file`, precision@k quedaría acotada a un máximo teórico de 1/3 aunque los contextos recuperados fueran todos relevantes.
 
 Notas de cálculo:
-- hit rate: se asigna 1 si el source_file coincide con alguno de los documentos recuperados por ruta o si el contexto de referencia coincide parcialmente con un texto recuperado; en caso contrario 0.
+- hit rate: se asigna 1 si el source_file coincide con alguno de los documentos recuperados por ruta, y si no 0.
 - mrr: si hay hit, es 1/rank del primer match, si no hay hit es 0.
-- precision@k: se calcula como ratio de contextos con `relevance_score` >= 0.5 entre k, usando el score asignado por el modelo entre cada contexto y el `user_input`. Si hay hit pero no hay scores válidos y la métrica queda en 0, usar 1/3 como valor de respaldo.
+- precision@k: se calcula como ratio de contextos con `relevance_score` >= 0.5 entre k, usando el score asignado por el modelo entre cada contexto y el `user_input`. 
 - recall@k: se reporta igual que hit rate en este pipeline.
 
 Usa un tono profesional y breve.
@@ -228,7 +226,7 @@ def calculate_metrics(row):
         k = len(relevance_scores)
         if k > 0 and k == len(retrieved_list):
             try:
-                hits = sum(1 for score in relevance_scores if float(score) >= 0.9)
+                hits = sum(1 for score in relevance_scores if float(score) >= 0.4)
                 precision_at_k_relevance = hits / k
             except (TypeError, ValueError):
                 precision_at_k_relevance = float('nan')

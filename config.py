@@ -2,7 +2,8 @@ import os
 
 # --- PATHS ---
 KB_FOLDER = os.getenv("KB_FOLDER", "./kb_small_testfolder")
-PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/full_run_512")
+# PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/full_run_512")
+PIPELINE_OUTPUT_DIR = os.getenv("PIPELINE_OUTPUT_DIR", "outputs/full_test_reranker")
 
 
 PIPELINE_CSV = os.getenv(
